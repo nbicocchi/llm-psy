@@ -170,6 +170,8 @@ All assets are local: no CDNs, tracking, remote fonts or browser API calls. Java
 
 The build uses frozen Bundler resolution and custom Jekyll generators. `netlify.toml` configures Netlify to build the public snapshot with base directory `site` and publish directory `_site`. For GitHub Pages, build the static `site/_site/` output using a workflow that supports those plugins; the limited built-in safe-mode build will not generate model and stimulus detail pages. No GitHub Pages deployment workflow is enabled.
 
+Netlify uses `BUNDLE_FORCE_RUBY_PLATFORM=true` to compile native gems against its installed Ruby instead of relying on precompiled extensions with a potentially incompatible ABI. The lockfile includes the `ruby` platform and installation remains frozen. If a previous deploy failed with `google/protobuf_c` or `undefined symbol: ruby_abi_version`, retry the deploy without the dependency cache after applying this configuration. A clean native build can take longer and requires the build image's compiler toolchain.
+
 ## Visual stimulus generation
 
 ```bash

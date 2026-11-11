@@ -6,3 +6,7 @@ publish = "_site"
 [build.environment]
 RUBY_VERSION = "3.4.0"
 PYTHON_VERSION = "3.11"
+# Build native extensions against Netlify's actual Ruby ABI instead of loading
+# incompatible precompiled protobuf/FFI gems from another Ruby build.
+BUNDLE_FORCE_RUBY_PLATFORM = "true"
+BUNDLE_FROZEN = "true"

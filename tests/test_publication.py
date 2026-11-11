@@ -73,4 +73,9 @@ class PublicationTests(unittest.TestCase):
         config = tomllib.loads((root / "netlify.toml").read_text())
         self.assertIn("build --public", config["build"]["command"])
         self.assertEqual(config["build"]["publish"], "_site")
+        self.assertEqual(config["build"]["environment"]["BUNDLE_FORCE_RUBY_PLATFORM"], "true")
+        self.assertEqual(config["build"]["environment"]["BUNDLE_FROZEN"], "true")
+        lock = (root / "site/Gemfile.lock").read_text()
+        platforms = lock.split("PLATFORMS\n", 1)[1].split("\nDEPENDENCIES", 1)[0]
+        self.assertIn("  ruby\n", platforms)
         self.assertIn("assets/downloads/responses.jsonl", (root / "site/_config.public.yml").read_text())
