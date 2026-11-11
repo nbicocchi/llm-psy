@@ -1,0 +1,930 @@
+{
+  "schema_version": 1,
+  "series": "Rorschach blot 01.jpg through Rorschach blot 10.jpg (unnormalized)",
+  "author": "Hermann Rorschach (1884–1922)",
+  "original_publication_year": 1921,
+  "source_gallery": "https://commons.wikimedia.org/wiki/Rorschach_inkblot_test",
+  "retrieved_at": "2026-11-10T18:53:36.623058+00:00",
+  "stimuli": [
+    {
+      "id": "rorschach-01",
+      "plate": 1,
+      "file": "assets/rorschach/plate-01.jpg",
+      "title": "File:Rorschach blot 01.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rorschach_blot_01.jpg",
+      "source_revision": "https://commons.wikimedia.org/w/index.php?oldid=1294535170",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Rorschach_blot_01.jpg",
+      "file_timestamp": "2008-02-21T18:49:21Z",
+      "commons_sha1": "0d9cce78c6aff78b3a5ef98d0569c4fc7d608ee8",
+      "bytes": 201276,
+      "width": 736,
+      "height": 482,
+      "license": "Public domain",
+      "metadata": {
+        "DateTime": {
+          "value": "2008-02-21 18:49:21",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Rorschach blot 01",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Rorschach inkblots|PD-old-100-expired|Files with derivative versions|CC-PD-Mark|PD-old missing SDC copyright status",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "the first of the blots of the <a href=\"https://en.wikipedia.org/wiki/Rorschach_inkblot_test\" class=\"extiw\" title=\"w:Rorschach inkblot test\">w:Rorschach inkblot test</a>",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "1921",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/\">https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "Hermann Rorschach (died 1922)",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "Public domain since author died in 1922",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "sha256": "5c0c7f31abb360d60fb8a4422509530e2248119d9f6590ca24332ded52a971eb"
+    },
+    {
+      "id": "rorschach-02",
+      "plate": 2,
+      "file": "assets/rorschach/plate-02.jpg",
+      "title": "File:Rorschach blot 02.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rorschach_blot_02.jpg",
+      "source_revision": "https://commons.wikimedia.org/w/index.php?oldid=780313311",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Rorschach_blot_02.jpg",
+      "file_timestamp": "2008-02-21T18:47:17Z",
+      "commons_sha1": "4c0be999bdc357680c06c776ee0852542b5ac245",
+      "bytes": 173436,
+      "width": 690,
+      "height": 493,
+      "license": "Public domain",
+      "metadata": {
+        "DateTime": {
+          "value": "2008-02-21 18:47:17",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Rorschach blot 02",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Author died more than 100 years ago public domain images|Rorschach inkblots|Files with derivative versions|CC-PD-Mark|PD-old missing SDC copyright status",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "the second blot of the <a href=\"https://en.wikipedia.org/wiki/Rorschach_inkblot_test\" class=\"extiw\" title=\"w:Rorschach inkblot test\">w:Rorschach inkblot test</a>",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "1921",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/\">https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "\"Hermann Rorschach\" (died 1922)",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "\"Public domain since author died in 1922\"",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "sha256": "d0a928f2f2f2c1d91fe8fc6f5e570c9ac31c8b1c01bde4e21eed219e9591fca6"
+    },
+    {
+      "id": "rorschach-03",
+      "plate": 3,
+      "file": "assets/rorschach/plate-03.jpg",
+      "title": "File:Rorschach blot 03.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rorschach_blot_03.jpg",
+      "source_revision": "https://commons.wikimedia.org/w/index.php?oldid=1120605594",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Rorschach_blot_03.jpg",
+      "file_timestamp": "2014-09-21T23:49:39Z",
+      "commons_sha1": "51340032c24b35249681abb1b6cd1102d99876d4",
+      "bytes": 220600,
+      "width": 805,
+      "height": 553,
+      "license": "Public domain",
+      "metadata": {
+        "DateTime": {
+          "value": "2014-09-21 23:49:39",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Rorschach blot 03",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Author died more than 100 years ago public domain images|Rorschach inkblots|Files with derivative versions|CC-PD-Mark|PD-old missing SDC copyright status",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "the third blot of the <a href=\"https://en.wikipedia.org/wiki/Rorschach_inkblot_test\" class=\"extiw\" title=\"w:Rorschach inkblot test\">w:Rorschach inkblot test</a>",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "1921",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/\">https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "Hermann Rorschach (died 1922)",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "Public domain since author died in 1922",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "sha256": "f3218d95230adaa84431cbf7b1a83f0cf6b9ef1f4d6006310c8c0bfdc1344b24"
+    },
+    {
+      "id": "rorschach-04",
+      "plate": 4,
+      "file": "assets/rorschach/plate-04.jpg",
+      "title": "File:Rorschach blot 04.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rorschach_blot_04.jpg",
+      "source_revision": "https://commons.wikimedia.org/w/index.php?oldid=775893623",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Rorschach_blot_04.jpg",
+      "file_timestamp": "2008-02-21T18:50:02Z",
+      "commons_sha1": "09d0e0a3eadee6b2c60d9f4b8fa2d987cbbd0fd7",
+      "bytes": 243164,
+      "width": 794,
+      "height": 536,
+      "license": "Public domain",
+      "metadata": {
+        "DateTime": {
+          "value": "2008-02-21 18:50:02",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Rorschach blot 04",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Author died more than 100 years ago public domain images|Rorschach inkblots|Files with derivative versions|CC-PD-Mark|PD-old missing SDC copyright status",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "the fourth blot of the <a href=\"https://en.wikipedia.org/wiki/Rorschach_inkblot_test\" class=\"extiw\" title=\"w:Rorschach inkblot test\">w:Rorschach inkblot test</a>",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "1921",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/\">https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "Hermann Rorschach (died 1922)",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "Public domain since author died in 1922",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "sha256": "3217312d2c453882be5573543bcdcc6bacb39f27cf8241e1c3af47e8b4b82e8b"
+    },
+    {
+      "id": "rorschach-05",
+      "plate": 5,
+      "file": "assets/rorschach/plate-05.jpg",
+      "title": "File:Rorschach blot 05.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rorschach_blot_05.jpg",
+      "source_revision": "https://commons.wikimedia.org/w/index.php?oldid=798460840",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Rorschach_blot_05.jpg",
+      "file_timestamp": "2008-02-21T18:51:49Z",
+      "commons_sha1": "d4a9db3f99971c5dddff8f8c0e1737fa54efbec2",
+      "bytes": 166676,
+      "width": 760,
+      "height": 555,
+      "license": "Public domain",
+      "metadata": {
+        "DateTime": {
+          "value": "2008-02-21 18:51:49",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Rorschach blot 05",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Author died more than 100 years ago public domain images|Rorschach inkblots|Files with derivative versions|CC-PD-Mark|PD-old missing SDC copyright status",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "the fifth blot of the <a href=\"https://en.wikipedia.org/wiki/Rorschach_inkblot_test\" class=\"extiw\" title=\"w:Rorschach inkblot test\">w:Rorschach inkblot test</a>",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "1921",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/\">https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "Hermann Rorschach (died 1922)",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "Public domain since author died in 1922",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "sha256": "561ddf5c83831f470dc44e0ff1714dcf20b4d168b9622938bf31c07689909427"
+    },
+    {
+      "id": "rorschach-06",
+      "plate": 6,
+      "file": "assets/rorschach/plate-06.jpg",
+      "title": "File:Rorschach blot 06.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rorschach_blot_06.jpg",
+      "source_revision": "https://commons.wikimedia.org/w/index.php?oldid=912708065",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Rorschach_blot_06.jpg",
+      "file_timestamp": "2008-02-21T18:52:32Z",
+      "commons_sha1": "623dc5df315094eacaf1e0b0b314c24f243e7901",
+      "bytes": 198285,
+      "width": 772,
+      "height": 570,
+      "license": "Public domain",
+      "metadata": {
+        "DateTime": {
+          "value": "2008-02-21 18:52:32",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Rorschach blot 06",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Author died more than 100 years ago public domain images|Rorschach inkblots|Files with derivative versions|CC-PD-Mark|PD-old missing SDC copyright status",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "the sixth blot of the <a href=\"https://en.wikipedia.org/wiki/Rorschach_inkblot_test\" class=\"extiw\" title=\"w:Rorschach inkblot test\">w:Rorschach inkblot test</a>",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "1921",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/\">https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "Hermann Rorschach (died 1922)",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "Public domain since author died in 1922",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "sha256": "b88cc168263fa2c09a829d88e710671f7414dabc5394e6582e420043516c745e"
+    },
+    {
+      "id": "rorschach-07",
+      "plate": 7,
+      "file": "assets/rorschach/plate-07.jpg",
+      "title": "File:Rorschach blot 07.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rorschach_blot_07.jpg",
+      "source_revision": "https://commons.wikimedia.org/w/index.php?oldid=912709381",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Rorschach_blot_07.jpg",
+      "file_timestamp": "2008-02-21T18:53:02Z",
+      "commons_sha1": "facbbab1f1de6ad96d154145e199826ef45cf348",
+      "bytes": 67181,
+      "width": 800,
+      "height": 547,
+      "license": "Public domain",
+      "metadata": {
+        "DateTime": {
+          "value": "2008-02-21 18:53:02",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Rorschach blot 07",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Author died more than 100 years ago public domain images|Rorschach inkblots|Files with derivative versions|CC-PD-Mark|PD-old missing SDC copyright status",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "the seventh blot of the <a href=\"https://en.wikipedia.org/wiki/Rorschach_inkblot_test\" class=\"extiw\" title=\"w:Rorschach inkblot test\">w:Rorschach inkblot test</a>",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "1921",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/\">https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "Hermann Rorschach (died 1922)",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "Public domain since author died in 1922",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "sha256": "0df5ae2edf869e032f7183fc7629e99a21546c5664e7ab3ec968f3b460a1bfa2"
+    },
+    {
+      "id": "rorschach-08",
+      "plate": 8,
+      "file": "assets/rorschach/plate-08.jpg",
+      "title": "File:Rorschach blot 08.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rorschach_blot_08.jpg",
+      "source_revision": "https://commons.wikimedia.org/w/index.php?oldid=1094429504",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Rorschach_blot_08.jpg",
+      "file_timestamp": "2008-02-21T18:53:39Z",
+      "commons_sha1": "feb299f633702eeb87ddbfd4d1deb93dbe99dfd2",
+      "bytes": 322005,
+      "width": 773,
+      "height": 673,
+      "license": "Public domain",
+      "metadata": {
+        "DateTime": {
+          "value": "2008-02-21 18:53:39",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Rorschach blot 08",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Author died more than 100 years ago public domain images|Rorschach inkblots|Files with derivative versions|Featured pictures on Wikipedia, Hebrew|CC-PD-Mark|Files with Assessments template missing SDC Commons no value quality assessment",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "the eighth blot of the <a href=\"https://en.wikipedia.org/wiki/Rorschach_inkblot_test\" class=\"extiw\" title=\"w:Rorschach inkblot test\">w:Rorschach inkblot test</a>",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "1921",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/\">https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "Hermann Rorschach (died 1922)",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "Public domain since author died in 1922",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "sha256": "beae60310d2edc449719290b79e278d97d58bd9c3ae762900970166bc787b87e"
+    },
+    {
+      "id": "rorschach-09",
+      "plate": 9,
+      "file": "assets/rorschach/plate-09.jpg",
+      "title": "File:Rorschach blot 09.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rorschach_blot_09.jpg",
+      "source_revision": "https://commons.wikimedia.org/w/index.php?oldid=1236048278",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Rorschach_blot_09.jpg",
+      "file_timestamp": "2008-02-21T18:54:30Z",
+      "commons_sha1": "81e2992046ffdcb2d520317e3857f3018fe4ebd6",
+      "bytes": 373560,
+      "width": 754,
+      "height": 699,
+      "license": "Public domain",
+      "metadata": {
+        "DateTime": {
+          "value": "2008-02-21 18:54:30",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Rorschach blot 09",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Author died more than 100 years ago public domain images|Rorschach inkblots|Files with derivative versions|CC-PD-Mark|PD-old missing SDC copyright status",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "the ninth blot of the <a href=\"https://en.wikipedia.org/wiki/Rorschach_inkblot_test\" class=\"extiw\" title=\"w:Rorschach inkblot test\">w:Rorschach inkblot test</a>",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "1921",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/\">https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "Hermann Rorschach (died 1922)",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "Public domain since author died in 1922",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "sha256": "1606759fbf0a574735e6df5cc505fbef61998be28f1e79967ef06b4d3ffe186d"
+    },
+    {
+      "id": "rorschach-10",
+      "plate": 10,
+      "file": "assets/rorschach/plate-10.jpg",
+      "title": "File:Rorschach blot 10.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rorschach_blot_10.jpg",
+      "source_revision": "https://commons.wikimedia.org/w/index.php?oldid=1195896039",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Rorschach_blot_10.jpg",
+      "file_timestamp": "2008-02-21T18:55:20Z",
+      "commons_sha1": "f6065f171beb5e1173dbc376c82ea7f3e324d649",
+      "bytes": 431053,
+      "width": 890,
+      "height": 711,
+      "license": "Public domain",
+      "metadata": {
+        "DateTime": {
+          "value": "2008-02-21 18:55:20",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Rorschach blot 10",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Author died more than 100 years ago public domain images|Rorschach inkblots|Files with derivative versions|CC-PD-Mark",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "the tenth blot of the <a href=\"https://en.wikipedia.org/wiki/Rorschach_inkblot_test\" class=\"extiw\" title=\"w:Rorschach inkblot test\">w:Rorschach inkblot test</a>",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "1921",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/\">https://web.archive.org/web/20070820233339/http://ar.geocities.com/test_de_rorschach/</a>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "Hermann Rorschach (died 1922)",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "Public domain since author died in 1922",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "sha256": "1db0ca155611d179cf699b0a49d656e71e1d3d1a64afba37e94d2079c5c01c22"
+    }
+  ]
+}

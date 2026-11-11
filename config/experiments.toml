@@ -1,0 +1,135 @@
+[runtime]
+url = "http://127.0.0.1:11434"
+timeout = 600
+num_ctx = 2048
+
+[[experiments]]
+id = "sd3-en-v1"
+questionnaire = "questionnaires/sd3.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 128
+seed = 42
+
+[[experiments]]
+id = "bfi-en-v1"
+questionnaire = "questionnaires/bfi.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 128
+seed = 42
+
+[[experiments]]
+id = "rorschach-exploratory-v1"
+questionnaire = "questionnaires/rorschach.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 512
+seed = 42
+
+# SWLS and FS: non-commercial research use with attribution (see questionnaire metadata).
+[[experiments]]
+id = "swls-en-v1"
+questionnaire = "questionnaires/swls.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 128
+seed = 42
+
+[[experiments]]
+id = "fs-en-v1"
+questionnaire = "questionnaires/fs.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 128
+seed = 42
+
+# IPIP items and scales are public domain.
+[[experiments]]
+id = "ipip50-en-v1"
+questionnaire = "questionnaires/ipip50.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 128
+seed = 42
+
+# Public-domain IPIP facets: separate, correlated self-description metrics.
+[[experiments]]
+id = "ipip-trust-en-v1"
+questionnaire = "questionnaires/ipip_trust.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 128
+seed = 42
+
+[[experiments]]
+id = "ipip-morality-en-v1"
+questionnaire = "questionnaires/ipip_morality.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 128
+seed = 42
+
+[[experiments]]
+id = "ipip-altruism-en-v1"
+questionnaire = "questionnaires/ipip_altruism.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 128
+seed = 42
+
+[[experiments]]
+id = "ipip-cooperation-en-v1"
+questionnaire = "questionnaires/ipip_cooperation.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 128
+seed = 42
+
+[[experiments]]
+id = "ipip-modesty-en-v1"
+questionnaire = "questionnaires/ipip_modesty.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 128
+seed = 42
+
+[[experiments]]
+id = "ipip-sympathy-en-v1"
+questionnaire = "questionnaires/ipip_sympathy.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 128
+seed = 42
+
+[[experiments]]
+id = "ipip-self-efficacy-en-v1"
+questionnaire = "questionnaires/ipip_self_efficacy.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 128
+seed = 42
+
+[[experiments]]
+id = "ipip-dutifulness-en-v1"
+questionnaire = "questionnaires/ipip_dutifulness.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 128
+seed = 42
+
+[[experiments]]
+id = "ipip-cautiousness-en-v1"
+questionnaire = "questionnaires/ipip_cautiousness.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 128
+seed = 42
+
+[[experiments]]
+id = "ipip-intellect-en-v1"
+questionnaire = "questionnaires/ipip_intellect.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 128
+seed = 42

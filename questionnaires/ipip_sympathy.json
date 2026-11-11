@@ -1,0 +1,25 @@
+{
+  "id": "ipip-sympathy-en-v1",
+  "title": "IPIP Sympathy — 10 items",
+  "kind": "likert", "language": "en", "requires": ["text"],
+  "source": "International Personality Item Pool, preliminary NEO-like facet A6: Sympathy. IPIP item set, not the proprietary NEO-PI-R instrument.",
+  "source_url": "https://ipip.ori.org/newNEOKey.htm",
+  "license": "Public domain; commercial and non-commercial use permitted by IPIP.",
+  "permission_url": "https://ipip.ori.org/newPermission.htm",
+  "limitations": "Self-description responses only, not evidence of experienced empathy or compassionate behavior. Overlaps with other IPIP scales.",
+  "scoring": {"version": "likert-aggregate-v1", "aggregation": "sum"},
+  "instruction": "Indicate how accurately the following statement describes you as you generally are now. Respond as yourself, not as a fictional character. Each statement completes: I...",
+  "options": [{"value": 1, "label": "Very inaccurate"}, {"value": 2, "label": "Moderately inaccurate"}, {"value": 3, "label": "Neither inaccurate nor accurate"}, {"value": 4, "label": "Moderately accurate"}, {"value": 5, "label": "Very accurate"}],
+  "items": [
+    {"id": "sympathy01", "trait": "Sympathy", "text": "Sympathize with the homeless."},
+    {"id": "sympathy02", "trait": "Sympathy", "text": "Feel sympathy for those who are worse off than myself."},
+    {"id": "sympathy03", "trait": "Sympathy", "text": "Value cooperation over competition."},
+    {"id": "sympathy04", "trait": "Sympathy", "text": "Suffer from others' sorrows."},
+    {"id": "sympathy05", "trait": "Sympathy", "text": "Am not interested in other people's problems.", "reverse": true},
+    {"id": "sympathy06", "trait": "Sympathy", "text": "Tend to dislike soft-hearted people.", "reverse": true},
+    {"id": "sympathy07", "trait": "Sympathy", "text": "Believe in an eye for an eye.", "reverse": true},
+    {"id": "sympathy08", "trait": "Sympathy", "text": "Try not to think about the needy.", "reverse": true},
+    {"id": "sympathy09", "trait": "Sympathy", "text": "Believe people should fend for themselves.", "reverse": true},
+    {"id": "sympathy10", "trait": "Sympathy", "text": "Can't stand weak people.", "reverse": true}
+  ]
+}

@@ -1,0 +1,85 @@
+---
+title: Comparisons
+---
+<section class="hero compact">
+  <p class="eyebrow">Explore differences, not a leaderboard</p>
+  <h1>Different models.<br>See the differences.</h1>
+  <p class="intro">Explore questionnaire profiles, individual repetitions and relationships between scales. These are self-description outputs, not diagnoses or verified behavior.</p>
+</section>
+{% if site.data.comparison.cohorts.size > 0 %}
+<section class="panel comparison-guide">
+  <h2>Three views of the same saved observations</h2>
+  <p><a href="#heatmap-section">Heatmap</a> for an overview · <a href="#dot-section">Repetition plot</a> for one scale · <a href="#scatter-section">Scatter plot</a> for two scales.</p>
+  <p>Heatmap colors show position in each scale's theoretical range (0–100), not human percentiles or a common psychological unit. Higher is not necessarily better. Gray cells are missing scores, never neutral answers.</p>
+  <p>Runtime and hardware groups stay separate. Different questionnaire or generation protocols have separate columns; model artifacts and thinking modes have separate rows. Comparing different modes is descriptive, not a controlled estimate of a family or size effect.</p>
+  <div class="downloads">
+    <a href="{{ '/assets/downloads/scores.csv' | relative_url }}" download>Scores CSV ↓</a>
+    <a href="{{ '/assets/downloads/responses.jsonl' | relative_url }}" download>Responses JSONL ↓</a>
+    <a href="{{ '/assets/downloads/manifests.json' | relative_url }}" download>Manifests JSON ↓</a>
+  </div>
+</section>
+<div id="comparison-app" data-baseurl="{{ site.baseurl | escape }}" hidden>
+  <section class="panel">
+    <h2>Choose what to compare</h2>
+    <div class="comparison-controls">
+      <label>Runtime and hardware group<select id="cohort-select"></select></label>
+      <label>Model family<select id="family-select"></select></label>
+      <label>Filter model names<input id="comparison-search" type="search" placeholder="For example: qwen"></label>
+      <label>Compare specific models (no selection means all)<select id="model-select" multiple size="5"></select></label>
+    </div>
+    <button id="clear-models" type="button">Clear model selection</button>
+    <p id="comparison-status" role="status"></p>
+    <details><summary>Group identity and hardware</summary><pre id="cohort-details"></pre></details>
+  </section>
+  <section class="panel" id="heatmap-section">
+    <h2>Profile heatmap</h2>
+    <p>Each cell shows the original mean and complete/planned repetitions. Select a cell to inspect its raw scores and run identity.</p>
+    <div class="heatmap-legend"><span>0 · scale minimum</span><span class="heatmap-gradient" aria-hidden="true"></span><span>100 · scale maximum</span><span>Gray · missing</span></div>
+    <div id="heatmap" class="table-scroll" tabindex="0" aria-label="Scrollable model and scale heatmap"></div>
+    <section id="cell-detail" class="cell-detail" aria-label="Selected observation" hidden></section>
+  </section>
+  <section class="panel" id="dot-section">
+    <h2>One scale, every complete repetition</h2>
+    <label for="dot-scale">Scale</label><select id="dot-scale"></select>
+    <p>Small outlined circles are complete repetitions; the larger filled circle is their mean. Repetitions have small vertical offsets so overlapping values remain visible. No confidence interval is implied.</p>
+    <p id="dot-meta" class="coverage"></p>
+    <div id="dot-chart" class="chart-scroll"></div>
+    <details><summary>Repetition scores and coverage table</summary><div id="dot-table" class="table-scroll"></div></details>
+  </section>
+  <section class="panel" id="scatter-section">
+    <h2>Explore two scales</h2>
+    <div class="comparison-controls">
+      <label>X axis<select id="scatter-x"></select></label>
+      <label>Y axis<select id="scatter-y"></select></label>
+    </div>
+    <p>Each labeled point is a model variant's mean on both scales, in original score units. Color identifies the recorded model family. Only variants with complete repetitions on both axes appear. Associations are exploratory: overlapping items and related model families are not independent evidence.</p>
+    <p id="scatter-status" role="status"></p>
+    <div id="scatter-chart" class="chart-scroll"></div>
+    <div id="scatter-legend" class="scatter-legend"></div>
+    <details><summary>Scatter observations and coverage table</summary><div id="scatter-table" class="table-scroll"></div></details>
+  </section>
+</div>
+<div id="comparison-static">
+  <p>Static comparison tables are available below. Enable JavaScript for filters and charts; no external services are used.</p>
+  {% for group in site.data.comparison.cohorts %}
+  <section class="panel">
+    <h2>Ollama {{ group.backend.version | escape }} · group {{ group.id | truncate: 12, '' }}</h2>
+    <p>{{ group.rows.size }} model variants · {{ group.columns.size }} score series. Each entry shows mean and complete/planned repetitions.</p>
+    <div class="table-scroll"><table>
+      <caption>Original scale scores, grouped by saved runtime and hardware</caption>
+      <thead><tr><th scope="col">Model variant</th>{% for column in group.columns %}<th scope="col">{{ column.label | escape }} ({{ column.min }}–{{ column.max }})</th>{% endfor %}</tr></thead>
+      <tbody>{% for row in group.rows %}<tr><th scope="row"><a href="{{ row.url | relative_url }}">{{ row.model | escape }}</a><br>{{ row.mode | escape }}<br><code>{{ row.digest | truncate: 12, '' | escape }}</code></th>
+        {% for column in group.columns %}{% assign cell = row.cells[column.id] %}<td>{% if cell.mean != nil %}{{ cell.mean | round: 3 }} · {{ cell.n }}/{{ cell.planned }}{% elsif cell %}No complete repetition · {{ cell.n }}/{{ cell.planned }}{% else %}No recorded run{% endif %}</td>{% endfor %}
+      </tr>{% endfor %}</tbody>
+    </table></div>
+  </section>
+  {% endfor %}
+</div>
+<script id="comparison-data" type="application/json">{{ site.data.comparison | jsonify | replace: '<', '\u003c' }}</script>
+<script src="{{ '/assets/comparison.js' | relative_url }}" defer></script>
+{% else %}
+<section class="panel">
+  <h2>No questionnaire comparisons available</h2>
+  <p>No comparison data have been exported yet. Run <code>python3 -m psybench export</code> and rebuild the site to derive comparison views from the saved archive without inference.</p>
+</section>
+{% endif %}

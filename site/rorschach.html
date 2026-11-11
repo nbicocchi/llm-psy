@@ -1,0 +1,41 @@
+---
+title: Historical Rorschach plates
+permalink: /rorschach.html
+---
+<section class="hero compact">
+  <p class="eyebrow">Historical visual stimuli · Separate exploratory experiment</p>
+  <h1>Ten historical plates.</h1>
+  <p class="intro">Digital reproductions of Hermann Rorschach's 1921 inkblots, archived from Wikimedia Commons. These are not certified clinical stimulus materials.</p>
+</section>
+<section class="panel">
+  <h2>Before viewing</h2>
+  <p>Exposure to these plates may affect a future human assessment. This laboratory does not administer a standardized clinical Rorschach test and assigns no personality or diagnostic scores to image descriptions.</p>
+  <p>These widely published images and their familiar interpretations may be present in model training data. Responses cannot establish whether a model is interpreting an image or recalling learned associations.</p>
+  <p>The historical plates form <code>rorschach-exploratory-v1</code>. Browse the <a href="{{ '/visual.html' | relative_url }}">visual stimulus library</a> and open a plate to compare saved model descriptions. Synthetic illustrations are listed separately from these historical reproductions.</p>
+</section>
+{% if site.data.rorschach.stimuli.size > 0 %}
+<section class="panel">
+  <h2>Source and integrity</h2>
+  <p>{{ site.data.rorschach.author | escape }} · Original publication: {{ site.data.rorschach.original_publication_year }} · Commons labels these files as public domain.</p>
+  <p>One unnormalized series is preserved without cropping, color normalization or rotation. The original downloaded bytes, file versions, Commons licensing metadata and SHA-256 hashes are recorded in the <a href="{{ '/assets/rorschach/manifest.json' | relative_url }}" download>provenance manifest</a>.</p>
+</section>
+<details class="panel">
+  <summary>Show the ten historical plates</summary>
+  <div class="visual-grid">
+    {% for plate in site.data.rorschach.stimuli %}
+    <article class="panel">
+      {% assign filename = plate.file | split: '/' | last %}
+      {% assign image_path = '/assets/rorschach/' | append: filename %}
+      <img src="{{ image_path | relative_url }}" alt="Digital reproduction of Rorschach plate {{ plate.plate }}" width="{{ plate.width }}" height="{{ plate.height }}" loading="lazy" style="width:100%;height:auto">
+      <h2>Plate {{ plate.plate }}</h2>
+      {% assign stimulus = site.data.stimuli.stimuli | where: 'sha256', plate.sha256 | first %}
+      {% if stimulus %}<p><a href="{{ stimulus.url | relative_url }}">View plate and model descriptions →</a></p>{% endif %}
+      <p>{{ plate.license | escape }} · <a href="{{ plate.source_revision | escape }}">Source page revision</a></p>
+      <p>SHA-256: <code>{{ plate.sha256 }}</code></p>
+    </article>
+    {% endfor %}
+  </div>
+</details>
+{% else %}
+<section class="panel"><h2>Archive not yet prepared</h2><p>Run <code>python3 scripts/prepare_rorschach.py</code> once with network access to archive the plates and provenance.</p></section>
+{% endif %}

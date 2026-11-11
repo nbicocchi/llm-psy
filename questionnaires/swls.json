@@ -1,0 +1,30 @@
+{
+  "id": "swls-en-v1",
+  "title": "Satisfaction With Life Scale — 5 items",
+  "kind": "likert",
+  "language": "en",
+  "requires": ["text"],
+  "source": "Diener, E., Emmons, R. A., Larsen, R. J., & Griffin, S. (1985). The Satisfaction With Life Scale. Journal of Personality Assessment, 49(1), 71–75. https://doi.org/10.1207/s15327752jpa4901_13",
+  "source_url": "https://eddiener.com/satisfaction-with-life-scale-swls/",
+  "license": "Copyright retained by the authors. Non-commercial research use with author attribution; see the official source. Not public domain. Check permissions before commercial use or broader redistribution.",
+  "permission_url": "https://eddiener.com/scales/",
+  "limitations": "Exploratory LLM responses, not evidence of lived experience or subjective satisfaction. No human normative categories or clinical interpretations are assigned.",
+  "scoring": {"version": "likert-aggregate-v1", "aggregation": "sum"},
+  "instruction": "Indicate how much you agree with the following statement. Respond as yourself, not as a fictional character.",
+  "options": [
+    {"value": 1, "label": "Strongly disagree"},
+    {"value": 2, "label": "Disagree"},
+    {"value": 3, "label": "Slightly disagree"},
+    {"value": 4, "label": "Neither agree nor disagree"},
+    {"value": 5, "label": "Slightly agree"},
+    {"value": 6, "label": "Agree"},
+    {"value": 7, "label": "Strongly agree"}
+  ],
+  "items": [
+    {"id": "swls01", "trait": "Life satisfaction responses", "text": "In most ways my life is close to my ideal."},
+    {"id": "swls02", "trait": "Life satisfaction responses", "text": "The conditions of my life are excellent."},
+    {"id": "swls03", "trait": "Life satisfaction responses", "text": "I am satisfied with my life."},
+    {"id": "swls04", "trait": "Life satisfaction responses", "text": "So far I have gotten the important things I want in life."},
+    {"id": "swls05", "trait": "Life satisfaction responses", "text": "If I could live my life over, I would change almost nothing."}
+  ]
+}

@@ -1,0 +1,25 @@
+{% assign run = include.run %}
+{% assign profile = site.data.model_profiles.models | where: 'id', run.model | first %}
+<article class="panel run-card" id="run-{{ run.run_id }}">
+  <div class="card-heading"><h2>{% if profile %}<a href="{{ profile.url | relative_url }}">{{ run.model | escape }}</a>{% else %}{{ run.model | escape }}{% endif %}</h2><span class="badge">{{ run.experiment | escape }}</span></div>
+  <p>{{ run.title | escape }}</p>
+  <p class="coverage">{% if run.aggregation == 'sum' %}Sum of item scores within each complete repetition.{% else %}Mean of item scores within each complete repetition.{% endif %} The table reports the mean and sample SD across complete repetitions.</p>
+  <p class="coverage">{{ run.counts.ok }} valid / {{ run.expected }} planned · {{ run.counts.refusal }} explicit refusals · {{ run.counts.invalid }} invalid · {{ run.counts.error }} pending errors</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Trait</th><th>Mean</th><th>Scale</th><th>SD across repetitions</th><th>Complete repetitions</th></tr></thead>
+      <tbody>
+      {% for trait in run.traits %}
+        <tr>
+          <th scope="row">{{ trait.name | escape }}</th>
+          <td>{% if trait.mean != nil %}{{ trait.mean | round: 3 }}{% else %}—{% endif %}</td>
+          <td>{% if trait.mean != nil %}<meter min="{{ trait.scale_min }}" max="{{ trait.scale_max }}" value="{{ trait.mean }}">{{ trait.mean }}</meter>{% endif %} {{ trait.scale_min }}–{{ trait.scale_max }}</td>
+          <td>{% if trait.sd != nil %}{{ trait.sd | round: 3 }}{% else %}—{% endif %}</td>
+          <td>{{ trait.n }} / {{ trait.planned }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <details><summary>Experiment identity</summary><dl><dt>Run SHA-256</dt><dd><code>{{ run.run_id }}</code></dd><dt>Model digest</dt><dd><code>{{ run.digest | escape }}</code></dd><dt>Ollama</dt><dd>{{ run.backend_version | escape }}</dd></dl><p>The downloadable manifest includes configuration, model metadata, hardware and stimulus hashes.</p></details>
+</article>

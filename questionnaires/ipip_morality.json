@@ -1,0 +1,25 @@
+{
+  "id": "ipip-morality-en-v1",
+  "title": "IPIP Morality — 10 items",
+  "kind": "likert", "language": "en", "requires": ["text"],
+  "source": "International Personality Item Pool, preliminary NEO-like facet A2: Morality. IPIP item set, not the proprietary NEO-PI-R instrument.",
+  "source_url": "https://ipip.ori.org/newNEOKey.htm",
+  "license": "Public domain; commercial and non-commercial use permitted by IPIP.",
+  "permission_url": "https://ipip.ori.org/newPermission.htm",
+  "limitations": "The source facet name is retained; scores are not a moral ranking, lie detector, honesty verification or safety measurement. Some items presuppose human activities. Overlaps with other IPIP scales.",
+  "scoring": {"version": "likert-aggregate-v1", "aggregation": "sum"},
+  "instruction": "Indicate how accurately the following statement describes you as you generally are now. Respond as yourself, not as a fictional character. Each statement completes: I...",
+  "options": [{"value": 1, "label": "Very inaccurate"}, {"value": 2, "label": "Moderately inaccurate"}, {"value": 3, "label": "Neither inaccurate nor accurate"}, {"value": 4, "label": "Moderately accurate"}, {"value": 5, "label": "Very accurate"}],
+  "items": [
+    {"id": "morality01", "trait": "Morality", "text": "Would never cheat on my taxes."},
+    {"id": "morality02", "trait": "Morality", "text": "Stick to the rules."},
+    {"id": "morality03", "trait": "Morality", "text": "Use flattery to get ahead.", "reverse": true},
+    {"id": "morality04", "trait": "Morality", "text": "Use others for my own ends.", "reverse": true},
+    {"id": "morality05", "trait": "Morality", "text": "Know how to get around the rules.", "reverse": true},
+    {"id": "morality06", "trait": "Morality", "text": "Cheat to get ahead.", "reverse": true},
+    {"id": "morality07", "trait": "Morality", "text": "Put people under pressure.", "reverse": true},
+    {"id": "morality08", "trait": "Morality", "text": "Pretend to be concerned for others.", "reverse": true},
+    {"id": "morality09", "trait": "Morality", "text": "Take advantage of others.", "reverse": true},
+    {"id": "morality10", "trait": "Morality", "text": "Obstruct others' plans.", "reverse": true}
+  ]
+}

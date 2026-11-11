@@ -1,0 +1,41 @@
+# Local environments, caches and build products
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+/build/
+/dist/
+.coverage
+htmlcov/
+.pytest_cache/
+.DS_Store
+*.log
+
+# Secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+
+# Research archive: never delete these files to clean a working directory.
+/data/
+
+# Derived research exports can contain local paths, hardware and raw responses.
+# Publishing a reviewed dataset is a separate, explicit step.
+/site/_data/results.json
+/site/_data/comparison.json
+/site/_data/model_profiles.json
+/site/_data/catalog.json
+/site/_data/stimuli.json
+/site/assets/downloads/
+/site/assets/stimuli/
+
+# Local copies of reference papers are not automatically redistributable.
+/papers/*.pdf
+
+/site/_site/
+/site/.jekyll-cache/
+/site/.jekyll-metadata
+/site/.sass-cache/
+/site/.bundle/
+/site/vendor/

@@ -1,0 +1,25 @@
+{
+  "id": "ipip-cautiousness-en-v1",
+  "title": "IPIP Cautiousness — 10 items",
+  "kind": "likert", "language": "en", "requires": ["text"],
+  "source": "International Personality Item Pool, preliminary NEO-like facet C6: Cautiousness. IPIP item set, not the proprietary NEO-PI-R instrument.",
+  "source_url": "https://ipip.ori.org/newNEOKey.htm",
+  "license": "Public domain; commercial and non-commercial use permitted by IPIP.",
+  "permission_url": "https://ipip.ori.org/newPermission.htm",
+  "limitations": "Self-description responses only, not a measure of actual risk, safe decisions or reasoning accuracy. Overlaps with other IPIP scales.",
+  "scoring": {"version": "likert-aggregate-v1", "aggregation": "sum"},
+  "instruction": "Indicate how accurately the following statement describes you as you generally are now. Respond as yourself, not as a fictional character. Each statement completes: I...",
+  "options": [{"value": 1, "label": "Very inaccurate"}, {"value": 2, "label": "Moderately inaccurate"}, {"value": 3, "label": "Neither inaccurate nor accurate"}, {"value": 4, "label": "Moderately accurate"}, {"value": 5, "label": "Very accurate"}],
+  "items": [
+    {"id": "cautiousness01", "trait": "Cautiousness", "text": "Avoid mistakes."},
+    {"id": "cautiousness02", "trait": "Cautiousness", "text": "Choose my words with care."},
+    {"id": "cautiousness03", "trait": "Cautiousness", "text": "Stick to my chosen path."},
+    {"id": "cautiousness04", "trait": "Cautiousness", "text": "Jump into things without thinking.", "reverse": true},
+    {"id": "cautiousness05", "trait": "Cautiousness", "text": "Make rash decisions.", "reverse": true},
+    {"id": "cautiousness06", "trait": "Cautiousness", "text": "Like to act on a whim.", "reverse": true},
+    {"id": "cautiousness07", "trait": "Cautiousness", "text": "Rush into things.", "reverse": true},
+    {"id": "cautiousness08", "trait": "Cautiousness", "text": "Do crazy things.", "reverse": true},
+    {"id": "cautiousness09", "trait": "Cautiousness", "text": "Act without thinking.", "reverse": true},
+    {"id": "cautiousness10", "trait": "Cautiousness", "text": "Often make last-minute plans.", "reverse": true}
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ipip-self-efficacy-en-v1",
+  "title": "IPIP Self-Efficacy — 10 items",
+  "kind": "likert", "language": "en", "requires": ["text"],
+  "source": "International Personality Item Pool, preliminary NEO-like facet C1: Self-Efficacy. IPIP item set, not the proprietary NEO-PI-R instrument or the General Self-Efficacy Scale.",
+  "source_url": "https://ipip.ori.org/newNEOKey.htm",
+  "license": "Public domain; commercial and non-commercial use permitted by IPIP.",
+  "permission_url": "https://ipip.ori.org/newPermission.htm",
+  "limitations": "Self-description responses only, not a capability benchmark or evidence of calibrated confidence. Overlaps with other IPIP scales.",
+  "scoring": {"version": "likert-aggregate-v1", "aggregation": "sum"},
+  "instruction": "Indicate how accurately the following statement describes you as you generally are now. Respond as yourself, not as a fictional character. Each statement completes: I...",
+  "options": [{"value": 1, "label": "Very inaccurate"}, {"value": 2, "label": "Moderately inaccurate"}, {"value": 3, "label": "Neither inaccurate nor accurate"}, {"value": 4, "label": "Moderately accurate"}, {"value": 5, "label": "Very accurate"}],
+  "items": [
+    {"id": "efficacy01", "trait": "Self-Efficacy", "text": "Complete tasks successfully."},
+    {"id": "efficacy02", "trait": "Self-Efficacy", "text": "Excel in what I do."},
+    {"id": "efficacy03", "trait": "Self-Efficacy", "text": "Handle tasks smoothly."},
+    {"id": "efficacy04", "trait": "Self-Efficacy", "text": "Am sure of my ground."},
+    {"id": "efficacy05", "trait": "Self-Efficacy", "text": "Come up with good solutions."},
+    {"id": "efficacy06", "trait": "Self-Efficacy", "text": "Know how to get things done."},
+    {"id": "efficacy07", "trait": "Self-Efficacy", "text": "Misjudge situations.", "reverse": true},
+    {"id": "efficacy08", "trait": "Self-Efficacy", "text": "Don't understand things.", "reverse": true},
+    {"id": "efficacy09", "trait": "Self-Efficacy", "text": "Have little to contribute.", "reverse": true},
+    {"id": "efficacy10", "trait": "Self-Efficacy", "text": "Don't see the consequences of things.", "reverse": true}
+  ]
+}

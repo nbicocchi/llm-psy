@@ -1,0 +1,28 @@
+---
+title: Visual stimuli
+permalink: /visual.html
+---
+<section class="hero compact">
+  <p class="eyebrow">The stimulus library</p>
+  <h1>Start with the image.</h1>
+  <p class="intro">Browse all available stimuli. Open an image to compare the descriptions recorded from different models, with repetitions and run variants kept separate.</p>
+  <p>Original synthetic inkblots are unvalidated illustrations. Historical Rorschach plates are not certified clinical materials; viewing them may affect a future human assessment. No descriptions receive psychological or diagnostic scores.</p>
+  <p><a href="{{ '/rorschach.html' | relative_url }}">Historical sources and viewing notice →</a></p>
+</section>
+{% if site.data.stimuli.stimuli.size > 0 %}
+<label for="stimulus-filter">Filter by stimulus, title or series</label>
+<input id="stimulus-filter" type="search" data-filter=".stimulus-card" placeholder="For example: charcoal or rorschach">
+<p class="coverage">{{ site.data.stimuli.stimuli.size }} available image versions. A preview without observations is not a measured result.</p>
+<div class="visual-grid">
+{% for stimulus in site.data.stimuli.stimuli %}
+<article class="panel visual-card stimulus-card">
+  <a href="{{ stimulus.url | relative_url }}">{% if stimulus.image %}<img src="{{ stimulus.image | relative_url }}" alt="Inkblot stimulus: {{ stimulus.title | escape }}"{% if stimulus.width %} width="{{ stimulus.width }}" height="{{ stimulus.height }}"{% endif %} loading="lazy">{% endif %}</a>
+  <h2><a href="{{ stimulus.url | relative_url }}">{{ stimulus.title | escape }}</a></h2>
+  <p class="eyebrow">{{ stimulus.series | escape }}</p>
+  {% if stimulus.observations > 0 %}<p>{{ stimulus.model_count }} models · {{ stimulus.observations }} saved observations</p>{% else %}<p>No recorded descriptions yet.</p>{% endif %}
+</article>
+{% endfor %}
+</div>
+{% else %}
+<section class="panel"><h2>No stimuli available</h2><p>Build the site to index locally available stimulus manifests and saved visual responses.</p></section>
+{% endif %}

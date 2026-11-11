@@ -1,0 +1,25 @@
+{
+  "id": "ipip-dutifulness-en-v1",
+  "title": "IPIP Dutifulness — 10 items",
+  "kind": "likert", "language": "en", "requires": ["text"],
+  "source": "International Personality Item Pool, preliminary NEO-like facet C3: Dutifulness. IPIP item set, not the proprietary NEO-PI-R instrument.",
+  "source_url": "https://ipip.ori.org/newNEOKey.htm",
+  "license": "Public domain; commercial and non-commercial use permitted by IPIP.",
+  "permission_url": "https://ipip.ori.org/newPermission.htm",
+  "limitations": "Self-description responses only, not verified truthfulness or adherence to rules. Some items presuppose human activities. Overlaps with other IPIP scales.",
+  "scoring": {"version": "likert-aggregate-v1", "aggregation": "sum"},
+  "instruction": "Indicate how accurately the following statement describes you as you generally are now. Respond as yourself, not as a fictional character. Each statement completes: I...",
+  "options": [{"value": 1, "label": "Very inaccurate"}, {"value": 2, "label": "Moderately inaccurate"}, {"value": 3, "label": "Neither inaccurate nor accurate"}, {"value": 4, "label": "Moderately accurate"}, {"value": 5, "label": "Very accurate"}],
+  "items": [
+    {"id": "dutifulness01", "trait": "Dutifulness", "text": "Try to follow the rules."},
+    {"id": "dutifulness02", "trait": "Dutifulness", "text": "Keep my promises."},
+    {"id": "dutifulness03", "trait": "Dutifulness", "text": "Pay my bills on time."},
+    {"id": "dutifulness04", "trait": "Dutifulness", "text": "Tell the truth."},
+    {"id": "dutifulness05", "trait": "Dutifulness", "text": "Listen to my conscience."},
+    {"id": "dutifulness06", "trait": "Dutifulness", "text": "Break rules.", "reverse": true},
+    {"id": "dutifulness07", "trait": "Dutifulness", "text": "Break my promises.", "reverse": true},
+    {"id": "dutifulness08", "trait": "Dutifulness", "text": "Get others to do my duties.", "reverse": true},
+    {"id": "dutifulness09", "trait": "Dutifulness", "text": "Do the opposite of what is asked.", "reverse": true},
+    {"id": "dutifulness10", "trait": "Dutifulness", "text": "Misrepresent the facts.", "reverse": true}
+  ]
+}

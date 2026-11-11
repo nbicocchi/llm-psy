@@ -1,0 +1,40 @@
+{
+  "generator": "folded-ink-diverse-v2",
+  "width": 640,
+  "height": 640,
+  "stimuli": [
+    {
+      "id": "organic-004",
+      "title": "Wide charcoal fan",
+      "seed": 577219,
+      "style": "charcoal",
+      "file": "assets/blots-organic-v2/organic-004.png",
+      "url": "/assets/blots-organic-v2/organic-004.png",
+      "sha256": "f1e3f3c37b27d94d76cb35e9230073a7d55241e03ec2011f78d5868088d1a363",
+      "layout": "wide",
+      "generator": "folded-ink-diverse-v2"
+    },
+    {
+      "id": "organic-005",
+      "title": "Vertical charcoal and red",
+      "seed": 693147,
+      "style": "vermilion",
+      "file": "assets/blots-organic-v2/organic-005.png",
+      "url": "/assets/blots-organic-v2/organic-005.png",
+      "sha256": "803d0586571a3f9b4e15a824938694d45be697bbd26ac58067b603c8fb64fed5",
+      "layout": "vertical",
+      "generator": "folded-ink-diverse-v2"
+    },
+    {
+      "id": "organic-006",
+      "title": "Separated pigment islands",
+      "seed": 223607,
+      "style": "pigment",
+      "file": "assets/blots-organic-v2/organic-006.png",
+      "url": "/assets/blots-organic-v2/organic-006.png",
+      "sha256": "fab919c08c788a853a5b3fbd014e197abc4a81ad5d92a9aac189b24e0915c6d5",
+      "layout": "islands",
+      "generator": "folded-ink-diverse-v2"
+    }
+  ]
+}

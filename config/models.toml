@@ -1,0 +1,90 @@
+# Tags are resolved to immutable digests in data/models.lock.json on first use.
+# These models are not a controlled same-size comparison.
+[[models]]
+id = "qwen2.5-0.5b"
+model = "qwen2.5:0.5b"
+capabilities = ["text"]
+
+[[models]]
+id = "qwen3-0.6b"
+model = "qwen3:0.6b"
+capabilities = ["text"]
+# Keep questionnaire responses separate from the optional reasoning mode.
+think = false
+
+[[models]]
+id = "llama3.2-1b"
+model = "llama3.2:1b"
+capabilities = ["text"]
+
+[[models]]
+id = "moondream"
+model = "moondream:1.8b"
+# Specialized image model: intentionally excluded from text-only questionnaires.
+capabilities = ["vision"]
+
+[[models]]
+id = "smollm2-135m"
+model = "smollm2:135m"
+capabilities = ["text"]
+
+[[models]]
+id = "gemma3-270m"
+model = "gemma3:270m"
+capabilities = ["text"]
+
+[[models]]
+id = "granite4-350m"
+model = "granite4:350m"
+capabilities = ["text"]
+
+[[models]]
+id = "smollm2-360m"
+model = "smollm2:360m"
+capabilities = ["text"]
+
+[[models]]
+id = "gemma3-1b"
+model = "gemma3:1b"
+capabilities = ["text"]
+
+[[models]]
+id = "falcon3-1b"
+model = "falcon3:1b"
+capabilities = ["text"]
+
+[[models]]
+id = "tinyllama-1.1b"
+model = "tinyllama:1.1b"
+capabilities = ["text"]
+
+[[models]]
+id = "qwen2.5-1.5b"
+model = "qwen2.5:1.5b"
+capabilities = ["text"]
+
+[[models]]
+id = "smollm2-1.7b"
+model = "smollm2:1.7b"
+capabilities = ["text"]
+
+[[models]]
+id = "qwen3-1.7b"
+model = "qwen3:1.7b"
+capabilities = ["text"]
+think = false
+
+[[models]]
+id = "granite3.3-2b"
+model = "granite3.3:2b"
+capabilities = ["text"]
+
+[[models]]
+id = "llama3.2-3b"
+model = "llama3.2:3b"
+capabilities = ["text"]
+
+[[models]]
+id = "phi4-mini-3.8b"
+model = "phi4-mini:3.8b"
+capabilities = ["text"]

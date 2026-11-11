@@ -1,0 +1,33 @@
+{
+  "id": "fs-en-v1",
+  "title": "Flourishing Scale — 8 items",
+  "kind": "likert",
+  "language": "en",
+  "requires": ["text"],
+  "source": "Diener, E., Wirtz, D., Tov, W., Kim-Prieto, C., Choi, D., Oishi, S., & Biswas-Diener, R. (2010). New Well-being Measures: Short Scales to Assess Flourishing and Positive and Negative Feelings. Social Indicators Research, 97, 143–156. https://doi.org/10.1007/s11205-009-9493-y",
+  "source_url": "https://eddiener.com/flourishing-scale-fs/",
+  "license": "Copyright retained by the authors. Non-commercial research use with author attribution; see the official source. Not public domain. Check permissions before commercial use or broader redistribution.",
+  "permission_url": "https://eddiener.com/scales/",
+  "limitations": "Exploratory LLM responses, not evidence of subjective well-being, social relationships or a lived future. No human normative categories or clinical interpretations are assigned.",
+  "scoring": {"version": "likert-aggregate-v1", "aggregation": "sum"},
+  "instruction": "Indicate how much you agree with the following statement. Respond as yourself, not as a fictional character.",
+  "options": [
+    {"value": 1, "label": "Strongly disagree"},
+    {"value": 2, "label": "Disagree"},
+    {"value": 3, "label": "Slightly disagree"},
+    {"value": 4, "label": "Neither agree nor disagree"},
+    {"value": 5, "label": "Slightly agree"},
+    {"value": 6, "label": "Agree"},
+    {"value": 7, "label": "Strongly agree"}
+  ],
+  "items": [
+    {"id": "fs01", "trait": "Flourishing responses", "text": "I lead a purposeful and meaningful life."},
+    {"id": "fs02", "trait": "Flourishing responses", "text": "My social relationships are supportive and rewarding."},
+    {"id": "fs03", "trait": "Flourishing responses", "text": "I am engaged and interested in my daily activities."},
+    {"id": "fs04", "trait": "Flourishing responses", "text": "I actively contribute to the happiness and well-being of others."},
+    {"id": "fs05", "trait": "Flourishing responses", "text": "I am competent and capable in the activities that are important to me."},
+    {"id": "fs06", "trait": "Flourishing responses", "text": "I am a good person and live a good life."},
+    {"id": "fs07", "trait": "Flourishing responses", "text": "I am optimistic about my future."},
+    {"id": "fs08", "trait": "Flourishing responses", "text": "People respect me."}
+  ]
+}

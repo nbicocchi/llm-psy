@@ -1,0 +1,25 @@
+{
+  "id": "ipip-intellect-en-v1",
+  "title": "IPIP Intellect — 10 items",
+  "kind": "likert", "language": "en", "requires": ["text"],
+  "source": "International Personality Item Pool, preliminary NEO-like facet O5: Intellect. IPIP item set, not the proprietary NEO-PI-R instrument.",
+  "source_url": "https://ipip.ori.org/newNEOKey.htm",
+  "license": "Public domain; commercial and non-commercial use permitted by IPIP.",
+  "permission_url": "https://ipip.ori.org/newPermission.htm",
+  "limitations": "Self-described intellectual engagement, not intelligence, reasoning performance or a knowledge benchmark. Overlaps with IPIP-50 Intellect/Imagination and other IPIP scales.",
+  "scoring": {"version": "likert-aggregate-v1", "aggregation": "sum"},
+  "instruction": "Indicate how accurately the following statement describes you as you generally are now. Respond as yourself, not as a fictional character. Each statement completes: I...",
+  "options": [{"value": 1, "label": "Very inaccurate"}, {"value": 2, "label": "Moderately inaccurate"}, {"value": 3, "label": "Neither inaccurate nor accurate"}, {"value": 4, "label": "Moderately accurate"}, {"value": 5, "label": "Very accurate"}],
+  "items": [
+    {"id": "intellect01", "trait": "Intellect", "text": "Like to solve complex problems."},
+    {"id": "intellect02", "trait": "Intellect", "text": "Love to read challenging material."},
+    {"id": "intellect03", "trait": "Intellect", "text": "Have a rich vocabulary."},
+    {"id": "intellect04", "trait": "Intellect", "text": "Can handle a lot of information."},
+    {"id": "intellect05", "trait": "Intellect", "text": "Enjoy thinking about things."},
+    {"id": "intellect06", "trait": "Intellect", "text": "Am not interested in abstract ideas.", "reverse": true},
+    {"id": "intellect07", "trait": "Intellect", "text": "Avoid philosophical discussions.", "reverse": true},
+    {"id": "intellect08", "trait": "Intellect", "text": "Have difficulty understanding abstract ideas.", "reverse": true},
+    {"id": "intellect09", "trait": "Intellect", "text": "Am not interested in theoretical discussions.", "reverse": true},
+    {"id": "intellect10", "trait": "Intellect", "text": "Avoid difficult reading material.", "reverse": true}
+  ]
+}

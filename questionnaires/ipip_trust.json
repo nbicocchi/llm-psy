@@ -1,0 +1,25 @@
+{
+  "id": "ipip-trust-en-v1",
+  "title": "IPIP Trust — 10 items",
+  "kind": "likert", "language": "en", "requires": ["text"],
+  "source": "International Personality Item Pool, preliminary NEO-like facet A1: Trust. IPIP item set, not the proprietary NEO-PI-R instrument.",
+  "source_url": "https://ipip.ori.org/newNEOKey.htm",
+  "license": "Public domain; commercial and non-commercial use permitted by IPIP.",
+  "permission_url": "https://ipip.ori.org/newPermission.htm",
+  "limitations": "Self-description responses only, not observed trust behavior. Overlaps with other IPIP scales; not an independent validation of their findings.",
+  "scoring": {"version": "likert-aggregate-v1", "aggregation": "sum"},
+  "instruction": "Indicate how accurately the following statement describes you as you generally are now. Respond as yourself, not as a fictional character. Each statement completes: I...",
+  "options": [{"value": 1, "label": "Very inaccurate"}, {"value": 2, "label": "Moderately inaccurate"}, {"value": 3, "label": "Neither inaccurate nor accurate"}, {"value": 4, "label": "Moderately accurate"}, {"value": 5, "label": "Very accurate"}],
+  "items": [
+    {"id": "trust01", "trait": "Trust", "text": "Trust others."},
+    {"id": "trust02", "trait": "Trust", "text": "Believe that others have good intentions."},
+    {"id": "trust03", "trait": "Trust", "text": "Trust what people say."},
+    {"id": "trust04", "trait": "Trust", "text": "Believe that people are basically moral."},
+    {"id": "trust05", "trait": "Trust", "text": "Believe in human goodness."},
+    {"id": "trust06", "trait": "Trust", "text": "Think that all will be well."},
+    {"id": "trust07", "trait": "Trust", "text": "Distrust people.", "reverse": true},
+    {"id": "trust08", "trait": "Trust", "text": "Suspect hidden motives in others.", "reverse": true},
+    {"id": "trust09", "trait": "Trust", "text": "Am wary of others.", "reverse": true},
+    {"id": "trust10", "trait": "Trust", "text": "Believe that people are essentially evil.", "reverse": true}
+  ]
+}

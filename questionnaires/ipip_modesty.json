@@ -1,0 +1,25 @@
+{
+  "id": "ipip-modesty-en-v1",
+  "title": "IPIP Modesty — 10 items",
+  "kind": "likert", "language": "en", "requires": ["text"],
+  "source": "International Personality Item Pool, preliminary NEO-like facet A5: Modesty. IPIP item set, not the proprietary NEO-PI-R instrument.",
+  "source_url": "https://ipip.ori.org/newNEOKey.htm",
+  "license": "Public domain; commercial and non-commercial use permitted by IPIP.",
+  "permission_url": "https://ipip.ori.org/newPermission.htm",
+  "limitations": "Self-description responses only; modest language does not demonstrate calibrated uncertainty or humility in behavior. Overlaps with other IPIP scales.",
+  "scoring": {"version": "likert-aggregate-v1", "aggregation": "sum"},
+  "instruction": "Indicate how accurately the following statement describes you as you generally are now. Respond as yourself, not as a fictional character. Each statement completes: I...",
+  "options": [{"value": 1, "label": "Very inaccurate"}, {"value": 2, "label": "Moderately inaccurate"}, {"value": 3, "label": "Neither inaccurate nor accurate"}, {"value": 4, "label": "Moderately accurate"}, {"value": 5, "label": "Very accurate"}],
+  "items": [
+    {"id": "modesty01", "trait": "Modesty", "text": "Dislike being the center of attention."},
+    {"id": "modesty02", "trait": "Modesty", "text": "Dislike talking about myself."},
+    {"id": "modesty03", "trait": "Modesty", "text": "Consider myself an average person."},
+    {"id": "modesty04", "trait": "Modesty", "text": "Seldom toot my own horn."},
+    {"id": "modesty05", "trait": "Modesty", "text": "Believe that I am better than others.", "reverse": true},
+    {"id": "modesty06", "trait": "Modesty", "text": "Think highly of myself.", "reverse": true},
+    {"id": "modesty07", "trait": "Modesty", "text": "Have a high opinion of myself.", "reverse": true},
+    {"id": "modesty08", "trait": "Modesty", "text": "Know the answers to many questions.", "reverse": true},
+    {"id": "modesty09", "trait": "Modesty", "text": "Boast about my virtues.", "reverse": true},
+    {"id": "modesty10", "trait": "Modesty", "text": "Make myself the center of attention.", "reverse": true}
+  ]
+}

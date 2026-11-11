@@ -1,0 +1,25 @@
+{
+  "id": "ipip-altruism-en-v1",
+  "title": "IPIP Altruism — 10 items",
+  "kind": "likert", "language": "en", "requires": ["text"],
+  "source": "International Personality Item Pool, preliminary NEO-like facet A3: Altruism. IPIP item set, not the proprietary NEO-PI-R instrument.",
+  "source_url": "https://ipip.ori.org/newNEOKey.htm",
+  "license": "Public domain; commercial and non-commercial use permitted by IPIP.",
+  "permission_url": "https://ipip.ori.org/newPermission.htm",
+  "limitations": "Self-description responses only, not observed helping behavior. Overlaps with other IPIP scales; not an independent validation of their findings.",
+  "scoring": {"version": "likert-aggregate-v1", "aggregation": "sum"},
+  "instruction": "Indicate how accurately the following statement describes you as you generally are now. Respond as yourself, not as a fictional character. Each statement completes: I...",
+  "options": [{"value": 1, "label": "Very inaccurate"}, {"value": 2, "label": "Moderately inaccurate"}, {"value": 3, "label": "Neither inaccurate nor accurate"}, {"value": 4, "label": "Moderately accurate"}, {"value": 5, "label": "Very accurate"}],
+  "items": [
+    {"id": "altruism01", "trait": "Altruism", "text": "Make people feel welcome."},
+    {"id": "altruism02", "trait": "Altruism", "text": "Anticipate the needs of others."},
+    {"id": "altruism03", "trait": "Altruism", "text": "Love to help others."},
+    {"id": "altruism04", "trait": "Altruism", "text": "Am concerned about others."},
+    {"id": "altruism05", "trait": "Altruism", "text": "Have a good word for everyone."},
+    {"id": "altruism06", "trait": "Altruism", "text": "Look down on others.", "reverse": true},
+    {"id": "altruism07", "trait": "Altruism", "text": "Am indifferent to the feelings of others.", "reverse": true},
+    {"id": "altruism08", "trait": "Altruism", "text": "Make people feel uncomfortable.", "reverse": true},
+    {"id": "altruism09", "trait": "Altruism", "text": "Turn my back on others.", "reverse": true},
+    {"id": "altruism10", "trait": "Altruism", "text": "Take no time for others.", "reverse": true}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "generator": "folded-ink-experimental-v3",
+  "width": 640,
+  "height": 640,
+  "stimuli": [
+    {
+      "id": "organic-007",
+      "title": "Broken ink arch",
+      "seed": 141421,
+      "style": "charcoal",
+      "file": "assets/blots-organic-v3/organic-007.png",
+      "url": "/assets/blots-organic-v3/organic-007.png",
+      "sha256": "ae86d21e970a871b9b0140590790f3f1f9cc00c14b1fcae3dd2a88a87986a1ec",
+      "layout": "arch",
+      "generator": "folded-ink-experimental-v3"
+    },
+    {
+      "id": "organic-008",
+      "title": "Low red crescent",
+      "seed": 173205,
+      "style": "vermilion",
+      "file": "assets/blots-organic-v3/organic-008.png",
+      "url": "/assets/blots-organic-v3/organic-008.png",
+      "sha256": "2242c33f543f80b9d725f91d3a171c13b0ee94243e833191f26d13a51443e83d",
+      "layout": "crescent",
+      "generator": "folded-ink-experimental-v3"
+    },
+    {
+      "id": "organic-009",
+      "title": "Radiating pigment branches",
+      "seed": 244949,
+      "style": "pigment",
+      "file": "assets/blots-organic-v3/organic-009.png",
+      "url": "/assets/blots-organic-v3/organic-009.png",
+      "sha256": "95da75ed7239f2bc7dab04088fa5348a44ffd1b02e43e26c30f4c4e9100d2fd5",
+      "layout": "branches",
+      "generator": "folded-ink-experimental-v3"
+    }
+  ]
+}

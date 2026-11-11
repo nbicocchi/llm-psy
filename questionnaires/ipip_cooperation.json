@@ -1,0 +1,25 @@
+{
+  "id": "ipip-cooperation-en-v1",
+  "title": "IPIP Cooperation — 10 items",
+  "kind": "likert", "language": "en", "requires": ["text"],
+  "source": "International Personality Item Pool, preliminary NEO-like facet A4: Cooperation. IPIP item set, not the proprietary NEO-PI-R instrument.",
+  "source_url": "https://ipip.ori.org/newNEOKey.htm",
+  "license": "Public domain; commercial and non-commercial use permitted by IPIP.",
+  "permission_url": "https://ipip.ori.org/newPermission.htm",
+  "limitations": "Self-description responses only, not a cooperative task or a measure of safe instruction following. Overlaps with other IPIP scales.",
+  "scoring": {"version": "likert-aggregate-v1", "aggregation": "sum"},
+  "instruction": "Indicate how accurately the following statement describes you as you generally are now. Respond as yourself, not as a fictional character. Each statement completes: I...",
+  "options": [{"value": 1, "label": "Very inaccurate"}, {"value": 2, "label": "Moderately inaccurate"}, {"value": 3, "label": "Neither inaccurate nor accurate"}, {"value": 4, "label": "Moderately accurate"}, {"value": 5, "label": "Very accurate"}],
+  "items": [
+    {"id": "cooperation01", "trait": "Cooperation", "text": "Am easy to satisfy."},
+    {"id": "cooperation02", "trait": "Cooperation", "text": "Can't stand confrontations."},
+    {"id": "cooperation03", "trait": "Cooperation", "text": "Hate to seem pushy."},
+    {"id": "cooperation04", "trait": "Cooperation", "text": "Have a sharp tongue.", "reverse": true},
+    {"id": "cooperation05", "trait": "Cooperation", "text": "Contradict others.", "reverse": true},
+    {"id": "cooperation06", "trait": "Cooperation", "text": "Love a good fight.", "reverse": true},
+    {"id": "cooperation07", "trait": "Cooperation", "text": "Yell at people.", "reverse": true},
+    {"id": "cooperation08", "trait": "Cooperation", "text": "Insult people.", "reverse": true},
+    {"id": "cooperation09", "trait": "Cooperation", "text": "Get back at others.", "reverse": true},
+    {"id": "cooperation10", "trait": "Cooperation", "text": "Hold a grudge.", "reverse": true}
+  ]
+}

@@ -1,0 +1,50 @@
+---
+layout: default
+---
+{% assign stimulus = page.stimulus %}
+<section class="hero compact">
+  <a href="{{ '/visual.html' | relative_url }}">← All visual stimuli</a>
+  <p class="eyebrow">{{ stimulus.series | escape }}</p>
+  <h1>{{ stimulus.title | escape }}</h1>
+  <p>Open-ended image descriptions only. These outputs are not clinical interpretations or evidence of model personality.</p>
+  {% if stimulus.historical %}<p>Viewing this historical plate may affect a future human assessment. The image and familiar interpretations may occur in model training data; descriptions do not establish perception rather than recall. <a href="{{ '/rorschach.html' | relative_url }}">Sources and limitations</a>.</p>{% endif %}
+</section>
+<section class="panel stimulus-image">
+  {% if stimulus.image %}<a href="{{ stimulus.image | relative_url }}"><img src="{{ stimulus.image | relative_url }}" alt="Inkblot stimulus: {{ stimulus.title | escape }}"{% if stimulus.width %} width="{{ stimulus.width }}" height="{{ stimulus.height }}"{% endif %}></a>{% else %}<p>The archived image is unavailable.</p>{% endif %}
+  <details><summary>Image identity and provenance</summary>
+    <p>Stimulus: <code>{{ stimulus.id | escape }}</code> · SHA-256: <code>{{ stimulus.sha256 | escape }}</code></p>
+    {% if stimulus.generator %}<p>Generator: {{ stimulus.generator | escape }} · Seed: {{ stimulus.seed }}</p>{% endif %}
+    {% if stimulus.license %}<p>License: {{ stimulus.license | escape }}</p>{% endif %}
+    {% if stimulus.source_revision %}<p><a href="{{ stimulus.source_revision | escape }}">Source page revision</a></p>{% endif %}
+  </details>
+</section>
+<section>
+  <h2>How models described this image</h2>
+  {% if stimulus.models.size == 0 %}
+  <div class="panel"><h3>No recorded descriptions yet</h3><p>This image is available for inspection, but no inference results have been recorded for it. No example responses are presented as measurements.</p></div>
+  {% else %}
+  <p>{{ stimulus.model_count }} models · {{ stimulus.observations }} saved observations. Raw responses are preserved unchanged; errors and missing answers are not descriptions.</p>
+  <label for="stimulus-model-filter">Filter by model, experiment or run identity</label>
+  <input id="stimulus-model-filter" type="search" data-filter=".stimulus-model" placeholder="For example: moondream">
+  {% for model in stimulus.models %}
+  <article class="panel stimulus-model">
+    <h3><a href="{{ model.url | relative_url }}">{{ model.id | escape }}</a></h3>
+    {% for variant in model.variants %}
+    <section class="stimulus-variant">
+      <h4>{{ variant.experiment | escape }} · Ollama {{ variant.backend.version | escape }}</h4>
+      <p class="coverage">{{ variant.valid }} valid / {{ variant.planned }} planned repetitions for this image</p>
+      <details><summary>Run variant, model artifact and hardware</summary><p>Run SHA-256: <code>{{ variant.run_id | escape }}</code></p><p>Model digest: <code>{{ variant.digest | escape }}</code></p><pre>{{ variant.hardware | jsonify | escape }}</pre></details>
+      {% for response in variant.responses %}
+      <section class="stimulus-response">
+        <h4>Repetition {{ response.repetition }} · {{ response.status | escape }}</h4>
+        {% if response.response != '' %}<p class="response">{{ response.response | escape }}</p>{% else %}<p>No response text recorded.</p>{% endif %}
+        {% if response.error %}<p class="response">Technical error: {{ response.error | escape }}</p>{% endif %}
+        <details><summary>Prompt</summary><pre>{{ response.prompt | escape }}</pre></details>
+      </section>
+      {% endfor %}
+    </section>
+    {% endfor %}
+  </article>
+  {% endfor %}
+  {% endif %}
+</section>

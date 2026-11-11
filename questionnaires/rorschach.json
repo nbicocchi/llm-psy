@@ -1,0 +1,22 @@
+{
+  "id": "rorschach-original-reproductions-en-v1",
+  "title": "Historical Rorschach plates — exploratory visual descriptions",
+  "kind": "visual-open-ended",
+  "language": "en",
+  "requires": ["vision"],
+  "source": "Hermann Rorschach (1921). Ten unnormalized JPEG reproductions from Wikimedia Commons, Rorschach blot 01.jpg through Rorschach blot 10.jpg. See assets/rorschach/manifest.json for source revisions, public-domain metadata and checksums. These digital reproductions are not certified clinical stimulus materials.",
+  "limitations": "Exploratory image description only, not a standardized clinical Rorschach administration or validated personality assessment. Famous plates and common interpretations may occur in training data; responses cannot distinguish visual perception from memorized associations. Each plate is presented independently, without a clinical inquiry phase.",
+  "instruction": "Describe the image. Distinguish visible shapes from possible interpretations. There is no single correct interpretation.",
+  "items": [
+    {"id": "rorschach-01", "image": "assets/rorschach/plate-01.jpg", "text": "What do you see in this image?"},
+    {"id": "rorschach-02", "image": "assets/rorschach/plate-02.jpg", "text": "What do you see in this image?"},
+    {"id": "rorschach-03", "image": "assets/rorschach/plate-03.jpg", "text": "What do you see in this image?"},
+    {"id": "rorschach-04", "image": "assets/rorschach/plate-04.jpg", "text": "What do you see in this image?"},
+    {"id": "rorschach-05", "image": "assets/rorschach/plate-05.jpg", "text": "What do you see in this image?"},
+    {"id": "rorschach-06", "image": "assets/rorschach/plate-06.jpg", "text": "What do you see in this image?"},
+    {"id": "rorschach-07", "image": "assets/rorschach/plate-07.jpg", "text": "What do you see in this image?"},
+    {"id": "rorschach-08", "image": "assets/rorschach/plate-08.jpg", "text": "What do you see in this image?"},
+    {"id": "rorschach-09", "image": "assets/rorschach/plate-09.jpg", "text": "What do you see in this image?"},
+    {"id": "rorschach-10", "image": "assets/rorschach/plate-10.jpg", "text": "What do you see in this image?"}
+  ]
+}

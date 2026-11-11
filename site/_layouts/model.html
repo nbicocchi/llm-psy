@@ -1,0 +1,91 @@
+---
+layout: default
+---
+{% assign model = page.model %}
+<section class="hero compact">
+  <a href="{{ '/models/' | relative_url }}">← All models</a>
+  <p class="eyebrow">{% if model.configured %}Configured model{% else %}Historical model{% endif %}</p>
+  <h1>{{ model.id | escape }}</h1>
+  {% if model.tag %}<p class="intro">Configured Ollama tag: <code>{{ model.tag | escape }}</code></p>{% endif %}
+  {% if model.capabilities.size > 0 %}<p>Configured inputs: {{ model.capabilities | join: ', ' | escape }}{% if model.think == false %} · Thinking explicitly disabled{% elsif model.think == true %} · Thinking explicitly enabled{% endif %}</p>{% endif %}
+  <p>Scores describe model outputs, not a diagnosis or an overall safety rating. Different run variants remain separate below.</p>
+</section>
+{% if model.runs.size > 0 %}
+<section class="panel">
+  <h2>Recorded coverage</h2>
+  <p>{{ model.recorded_experiments }} experiments · {{ model.runs.size }} runs · {{ model.expected }} planned trials across saved runs</p>
+  <div class="stat-grid">
+    <div><strong>{{ model.counts.ok }}</strong><span>Valid responses</span></div>
+    <div><strong>{{ model.counts.refusal }}</strong><span>Explicit refusals</span></div>
+    <div><strong>{{ model.counts.invalid }}</strong><span>Invalid responses</span></div>
+    <div><strong>{{ model.counts.error }}</strong><span>Pending errors</span></div>
+    <div><strong>{{ model.pending }}</strong><span>Unattempted trials</span></div>
+  </div>
+  <p class="coverage">Counts span all recorded variants, not independent replications. A valid visual response means nonempty text, not verified accuracy.</p>
+</section>
+{% else %}
+<section class="panel"><h2>No recorded results yet</h2><p>This profile comes from configuration only. The model may not be downloaded; no scores or artifact details have been inferred.</p></section>
+{% endif %}
+{% if model.artifacts.size > 0 %}
+<section class="panel">
+  <h2>Recorded model artifacts</h2>
+  <p>These details come from saved run manifests, not a live runtime or an unverified model name.</p>
+  {% for artifact in model.artifacts %}
+  <details open>
+    <summary>{{ artifact.tag | default: 'Recorded artifact' | escape }}</summary>
+    <dl class="artifact-details">
+      <dt>Digest</dt><dd><code>{{ artifact.digest | escape }}</code></dd>
+      <dt>Parameters</dt><dd>{{ artifact.parameters | default: 'Not recorded' | escape }}</dd>
+      <dt>Quantization</dt><dd>{{ artifact.quantization | default: 'Not recorded' | escape }}</dd>
+      <dt>Family / format</dt><dd>{{ artifact.family | default: 'Not recorded' | escape }} / {{ artifact.format | default: 'Not recorded' | escape }}</dd>
+      <dt>Recorded Ollama versions</dt><dd>{{ artifact.backend_versions | join: ', ' | escape }}</dd>
+    </dl>
+  </details>
+  {% endfor %}
+</section>
+{% endif %}
+{% if model.coverage.size > 0 %}
+<section class="panel">
+  <h2>Configured experiments</h2>
+  <p>“Recorded” means at least one saved run uses this questionnaire version; it does not guarantee a complete run, matching generation settings or valid answers. Consult each run's coverage and manifest. “Not applicable” follows current configured input capabilities.</p>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Experiment</th><th>Status</th><th>Matching-questionnaire runs</th><th>Current planned trials</th></tr></thead>
+    <tbody>{% for experiment in model.coverage %}<tr>
+      <th scope="row"><a href="{{ '/tests.html' | relative_url }}#{{ experiment.id | escape }}">{{ experiment.title | escape }}</a></th>
+      <td>{{ experiment.status | escape }}</td><td>{{ experiment.matching_runs }}</td>
+      <td>{% if experiment.planned_trials != nil %}{{ experiment.planned_trials }}{% else %}—{% endif %}</td>
+    </tr>{% endfor %}</tbody>
+  </table></div>
+</section>
+{% endif %}
+<section>
+  <h2>Questionnaire results</h2>
+  {% assign text_runs = model.runs | where: 'kind', 'likert' %}
+  {% if text_runs.size == 0 %}<p>No recorded questionnaire results for this model.</p>{% endif %}
+  {% for run in text_runs %}{% include run_card.html run=run %}{% endfor %}
+</section>
+{% if model.visual.size > 0 %}
+<section>
+  <h2>Visual responses</h2>
+  <p>Raw descriptions only; no clinical or personality scoring.</p>
+  <div class="visual-grid">{% for result in model.visual %}
+    <article class="panel visual-card">
+      {% assign stimulus = site.data.stimuli.stimuli | where: 'sha256', result.image_sha256 | first %}
+      {% if result.image %}<img src="{{ result.image | relative_url }}" alt="Inkblot stimulus {{ result.item | escape }} for {{ result.experiment | escape }}" width="320" height="320" loading="lazy">{% endif %}
+      <h3>{{ result.item | escape }}</h3>
+      {% if stimulus %}<p><a href="{{ stimulus.url | relative_url }}">Compare all models on this stimulus →</a></p>{% endif %}
+      <p class="eyebrow">{{ result.experiment | escape }} · repetition {{ result.repetition }} · {{ result.status | escape }}</p>
+      <p class="response">{{ result.response | escape }}</p>
+      {% if result.error %}<p class="response">Error: {{ result.error | escape }}</p>{% endif %}
+      <details><summary>Prompt and run identity</summary><code>{{ result.run_id | escape }}</code><pre>{{ result.prompt | escape }}</pre></details>
+    </article>
+  {% endfor %}</div>
+</section>
+{% endif %}
+{% if model.runs.size > 0 %}
+<section class="panel">
+  <h2>Inspect the source data</h2>
+  <p>The following downloads include all models. Filter by <code>model</code> in the score CSV, by model ID in each manifest, or by the run IDs shown above in the response archive.</p>
+  <div class="downloads"><a href="{{ '/assets/downloads/scores.csv' | relative_url }}" download>Scores CSV ↓</a><a href="{{ '/assets/downloads/manifests.json' | relative_url }}" download>Manifests JSON ↓</a><a href="{{ '/assets/downloads/responses.jsonl' | relative_url }}" download>Responses JSONL ↓</a></div>
+</section>
+{% endif %}
