@@ -6,6 +6,7 @@ import tempfile
 import unittest
 
 from psybench.stimuli import build_stimuli
+from psybench.core import load_config
 
 
 class StimulusCatalogTests(unittest.TestCase):
@@ -14,12 +15,12 @@ class StimulusCatalogTests(unittest.TestCase):
         self.addCleanup(self.directory.cleanup)
         self.root = Path(self.directory.name)
         self.digest = hashlib.sha256(b"fixture image").hexdigest()
-        path = self.root / "assets/blots-organic-v1"
+        path = self.root / "assets/blots-organic"
         path.mkdir(parents=True)
         (path / "one.png").write_bytes(b"fixture image")
         (path / "manifest.json").write_text(json.dumps({
             "generator": "fixture", "width": 640, "height": 640,
-            "stimuli": [{"id": "one", "title": "Fixture", "file": "assets/blots-organic-v1/one.png", "sha256": self.digest, "seed": 1}],
+            "stimuli": [{"id": "one", "title": "Fixture", "file": "assets/blots-organic/one.png", "sha256": self.digest, "seed": 1}],
         }))
         self.manifest = {"image_hashes": {"one": self.digest}, "artifact": {"digest": "model-digest"},
                          "backend": {"version": "fixture"}, "hardware": {"cpu": "fixture"},
@@ -37,7 +38,7 @@ class StimulusCatalogTests(unittest.TestCase):
         stimulus = self.build()[0]
         self.assertEqual(stimulus["observations"], 0)
         self.assertEqual(stimulus["models"], [])
-        self.assertEqual(stimulus["image"], "/assets/blots-organic-v1/one.png")
+        self.assertEqual(stimulus["image"], "/assets/blots-organic/one.png")
         self.assertTrue(stimulus["url"].startswith("/stimuli/one-"))
 
     def test_models_variants_and_repetitions_remain_separate(self):
@@ -67,9 +68,16 @@ class StimulusCatalogTests(unittest.TestCase):
         self.assertNotEqual(current["url"], archived["url"])
 
     def test_modified_stimulus_is_not_silently_published(self):
-        (self.root / "assets/blots-organic-v1/one.png").write_bytes(b"modified")
+        (self.root / "assets/blots-organic/one.png").write_bytes(b"modified")
         with self.assertRaisesRegex(ValueError, "hash mismatch"):
             self.build()
+
+    def test_public_image_url_can_differ_from_consolidated_source_path(self):
+        path = self.root / "assets/blots-organic/manifest.json"
+        manifest = json.loads(path.read_text())
+        manifest["stimuli"][0]["url"] = "/assets/blots-organic-v1/one.png"
+        path.write_text(json.dumps(manifest))
+        self.assertEqual(self.build()[0]["image"], "/assets/blots-organic-v1/one.png")
 
     def test_current_repository_has_nineteen_retained_stimuli(self):
         root = Path(__file__).resolve().parents[1]
@@ -77,3 +85,18 @@ class StimulusCatalogTests(unittest.TestCase):
         self.assertEqual(len(stimuli), 19)
         self.assertEqual(sum(stimulus["historical"] for stimulus in stimuli), 10)
         self.assertFalse(any(stimulus["id"] in {"blot-001", "blot-002", "blot-003"} for stimulus in stimuli))
+
+    def test_visual_experiments_cover_distinct_families(self):
+        root = Path(__file__).resolve().parents[1]
+        _, experiments, _ = load_config(root)
+        visual = {e["id"]: e for e in experiments if e["definition"]["kind"] == "visual-open-ended"}
+        self.assertEqual(set(visual), {"rorschach-exploratory-v1", "organic-inkblots-exploratory-v1"})
+        stimuli = build_stimuli(root, {}, {})["stimuli"]
+        for experiment_id, historical, count in (("rorschach-exploratory-v1", True, 10),
+                                                   ("organic-inkblots-exploratory-v1", False, 9)):
+            experiment = visual[experiment_id]
+            items = experiment["definition"]["items"]
+            self.assertEqual(len(items), count)
+            self.assertEqual(experiment["repetitions"], 3)
+            hashes = {hashlib.sha256((root / item["image"]).read_bytes()).hexdigest() for item in items}
+            self.assertEqual(hashes, {s["sha256"] for s in stimuli if s["historical"] == historical})

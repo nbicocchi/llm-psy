@@ -5,26 +5,27 @@ permalink: /models/
 <section class="hero compact">
   <p class="eyebrow">The model directory</p>
   <h1>Meet the models.</h1>
-  <p class="intro">Explore each model's recorded artifacts, experiment coverage and questionnaire responses. Configured models appear before their first run; historical models remain accessible even when removed from configuration.</p>
+  <p class="intro">Browse model tags, enabled inputs and technical specifications.</p>
 </section>
 {% if site.data.model_profiles.models.size > 0 %}
 <label for="model-filter">Filter by model, tag or capability</label>
 <input id="model-filter" type="search" data-filter=".model-card" placeholder="For example: qwen or vision">
 <div class="model-grid">
 {% for model in site.data.model_profiles.models %}
-<article class="panel model-card">
+<article class="panel model-card" id="{{ model.slug | escape }}">
   <p class="eyebrow">{% if model.configured %}Configured model{% else %}Historical model{% endif %}</p>
-  <h2><a href="{{ model.url | relative_url }}">{{ model.id | escape }}</a></h2>
+  <h2>{{ model.id | escape }}</h2>
   {% if model.tag %}<p><code>{{ model.tag | escape }}</code></p>{% endif %}
-  {% if model.capabilities.size > 0 %}<p>Configured inputs: {{ model.capabilities | join: ', ' | escape }}</p>{% endif %}
-  {% if model.runs.size > 0 %}
-  <p>{{ model.recorded_experiments }} experiments with saved results · {{ model.runs.size }} recorded runs</p>
-  <p class="coverage">{{ model.counts.ok }} valid · {{ model.counts.refusal }} explicit refusals · {{ model.counts.invalid }} invalid · {{ model.counts.error }} pending errors</p>
-  {% else %}<p>No recorded results yet.</p>{% endif %}
-  <a href="{{ model.url | relative_url }}">View model profile →</a>
+  {% if model.capabilities.size > 0 %}<p>Enabled inputs: {{ model.capabilities | join: ', ' | escape }}{% if model.think == false %} · Thinking disabled{% elsif model.think == true %} · Thinking enabled{% endif %}</p>{% endif %}
+  {% for artifact in model.artifacts %}
+  <dl>
+    <dt>Parameters / quantization</dt><dd>{{ artifact.parameters | default: 'Unavailable' | escape }} / {{ artifact.quantization | default: 'Unavailable' | escape }}</dd>
+    <dt>Family / format</dt><dd>{{ artifact.family | default: 'Unavailable' | escape }} / {{ artifact.format | default: 'Unavailable' | escape }}</dd>
+  </dl>
+  {% endfor %}
 </article>
 {% endfor %}
 </div>
 {% else %}
-<section class="panel"><h2>No model profiles yet</h2><p>Run <code>python3 -m psybench build</code> to generate model profiles from local configuration and saved exports.</p></section>
+<section class="panel"><h2>No models available</h2><p>Build the site to generate the model directory from local configuration and available metadata.</p></section>
 {% endif %}

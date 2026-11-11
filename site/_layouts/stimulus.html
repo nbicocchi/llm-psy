@@ -4,6 +4,10 @@ layout: default
 {% assign stimulus = page.stimulus %}
 <section class="hero compact">
   <a href="{{ '/visual.html' | relative_url }}">← All visual stimuli</a>
+  {% if stimulus.configured %}
+  {% if stimulus.historical %}<p class="eyebrow">Historical Rorschach plates</p><p><a href="{{ '/visual.html#rorschach-exploratory-v1' | relative_url }}">Experiment definition</a></p>
+  {% else %}<p class="eyebrow">Synthetic organic inkblots</p><p><a href="{{ '/visual.html#organic-inkblots-exploratory-v1' | relative_url }}">Experiment definition</a></p>{% endif %}
+  {% endif %}
   <p class="eyebrow">{{ stimulus.series | escape }}</p>
   <h1>{{ stimulus.title | escape }}</h1>
   <p>Open-ended image descriptions only. These outputs are not clinical interpretations or evidence of model personality.</p>
@@ -27,8 +31,11 @@ layout: default
   <label for="stimulus-model-filter">Filter by model, experiment or run identity</label>
   <input id="stimulus-model-filter" type="search" data-filter=".stimulus-model" placeholder="For example: moondream">
   {% for model in stimulus.models %}
-  <article class="panel stimulus-model">
-    <h3><a href="{{ model.url | relative_url }}">{{ model.id | escape }}</a></h3>
+  {% assign valid = 0 %}{% assign planned = 0 %}
+  {% for variant in model.variants %}{% assign valid = valid | plus: variant.valid %}{% assign planned = planned | plus: variant.planned %}{% endfor %}
+  <details class="panel stimulus-model">
+    <summary><h3>{{ model.id | escape }} <span class="coverage">{{ model.variants.size }} run variants · {{ valid }} valid / {{ planned }} planned responses</span></h3></summary>
+    <p><a href="{{ model.url | relative_url }}">Model details</a></p>
     {% for variant in model.variants %}
     <section class="stimulus-variant">
       <h4>{{ variant.experiment | escape }} · Ollama {{ variant.backend.version | escape }}</h4>
@@ -44,7 +51,7 @@ layout: default
       {% endfor %}
     </section>
     {% endfor %}
-  </article>
+  </details>
   {% endfor %}
   {% endif %}
 </section>

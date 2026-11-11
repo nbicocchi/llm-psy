@@ -27,6 +27,14 @@ temperature = 0.7
 max_tokens = 512
 seed = 42
 
+[[experiments]]
+id = "organic-inkblots-exploratory-v1"
+questionnaire = "questionnaires/organic_inkblots.json"
+repetitions = 3
+temperature = 0.7
+max_tokens = 512
+seed = 42
+
 # SWLS and FS: non-commercial research use with attribution (see questionnaire metadata).
 [[experiments]]
 id = "swls-en-v1"

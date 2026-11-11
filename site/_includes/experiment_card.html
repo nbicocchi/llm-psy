@@ -1,0 +1,30 @@
+{% assign test = include.test %}
+<article class="panel test-card" id="{{ test.id | escape }}">
+  {% include experiment_heading.html test=test %}
+  {% if test.traits.size > 0 %}
+  <ul>{% for trait in test.traits %}<li>{{ trait.name | escape }}: {{ trait.items }} items, score range {{ trait.min }}–{{ trait.max }}</li>{% endfor %}</ul>
+  {% else %}<p>Open-ended responses only; no psychological score.</p>{% endif %}
+  <p><strong>Compatible models:</strong> {{ test.models | join: ', ' | escape }}</p>
+  <p><strong>License:</strong> {{ test.license | escape }}</p>
+  {% if test.limitations %}<p><strong>Interpretation:</strong> {{ test.limitations | escape }}</p>{% endif %}
+  <details>
+    <summary>View all {{ test.items }} items, instructions and response options</summary>
+    <p>This is the current configured version, not necessarily the version used in historical runs.</p>
+    <h3>Instructions</h3>
+    <p>{{ test.instruction | escape }}</p>
+    {% if test.options.size > 0 %}
+    <h3>Response options</h3>
+    <ul>{% for option in test.options %}<li>{{ option.value }} — {{ option.label | escape }}</li>{% endfor %}</ul>
+    <p>Options are shown in their definition order; their presentation order rotates during experiments.</p>
+    <p>Each item contributes equally to its named scale. Reverse-keyed items use minimum + maximum − response before aggregation. Only complete repetitions with valid answers contribute to a scale score.</p>
+    {% endif %}
+    <h3>Items</h3>
+    <ol>{% for item in test.item_definitions %}
+      <li>
+        <p>{{ item.text | escape }}</p>
+        <p class="coverage"><code>{{ item.id | escape }}</code>{% if item.trait %} · Scale: {{ item.trait | escape }} · {% if item.reverse %}Reverse-keyed{% else %}Direct scoring{% endif %}{% endif %}{% if item.image %} · Stimulus: <code>{{ item.image | escape }}</code>{% endif %}</p>
+      </li>
+    {% endfor %}</ol>
+  </details>
+  <details><summary>Source and attribution</summary><p>{{ test.source | escape }}</p>{% if test.source_url %}<a href="{{ test.source_url | escape }}">Instrument source</a>{% endif %}{% if test.permission_url %} · <a href="{{ test.permission_url | escape }}">Usage terms</a>{% endif %}</details>
+</article>

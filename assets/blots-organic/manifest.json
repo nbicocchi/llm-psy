@@ -8,7 +8,7 @@
       "title": "Charcoal wash",
       "seed": 271828,
       "style": "charcoal",
-      "file": "assets/blots-organic-v1/organic-001.png",
+      "file": "assets/blots-organic/organic-001.png",
       "url": "/assets/blots-organic-v1/organic-001.png",
       "sha256": "d01c06020fe8f1566d751a998e4f7748feddc4c950893fa91de68978cb5acd7e"
     },
@@ -17,7 +17,7 @@
       "title": "Charcoal and vermilion",
       "seed": 314159,
       "style": "vermilion",
-      "file": "assets/blots-organic-v1/organic-002.png",
+      "file": "assets/blots-organic/organic-002.png",
       "url": "/assets/blots-organic-v1/organic-002.png",
       "sha256": "36ac174c90c8bd944be949069bc7684456c2100b2e56b08abce5194b65c1f043"
     },
@@ -26,7 +26,7 @@
       "title": "Muted pigment study",
       "seed": 161803,
       "style": "pigment",
-      "file": "assets/blots-organic-v1/organic-003.png",
+      "file": "assets/blots-organic/organic-003.png",
       "url": "/assets/blots-organic-v1/organic-003.png",
       "sha256": "a8080bca01fa336a8e43797cbde517d02abea02b6e8487210642cd9e99685c98"
     }

@@ -1,0 +1,6 @@
+<article class="panel visual-card stimulus-card">
+  <a href="{{ include.stimulus.url | relative_url }}">{% if include.stimulus.image %}<img src="{{ include.stimulus.image | relative_url }}" alt="Inkblot stimulus: {{ include.stimulus.title | escape }}"{% if include.stimulus.width %} width="{{ include.stimulus.width }}" height="{{ include.stimulus.height }}"{% endif %} loading="lazy">{% endif %}</a>
+  <h3><a href="{{ include.stimulus.url | relative_url }}">{{ include.stimulus.title | escape }}</a></h3>
+  <p class="eyebrow">{{ include.stimulus.series | escape }}</p>
+  {% if include.stimulus.observations > 0 %}<p>{{ include.stimulus.model_count }} models · {{ include.stimulus.observations }} saved observations</p>{% else %}<p>No recorded descriptions yet.</p>{% endif %}
+</article>

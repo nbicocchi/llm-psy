@@ -71,7 +71,7 @@ class ModelProfileTests(unittest.TestCase):
         self.assertEqual(profile["visual"], [rows[0]])
 
     def test_safe_stable_urls_and_distinct_normalization(self):
-        self.assertEqual(model_url("qwen3-0.6b"), "/models/qwen3-0.6b/")
+        self.assertEqual(model_url("qwen3-0.6b"), "/models/#qwen3-0.6b")
         ids = ["a/b", "a b", "A B", "../escape", "模型", "a-b"]
         slugs = [model_slug(name) for name in ids]
         self.assertEqual(len(set(slugs)), len(ids))

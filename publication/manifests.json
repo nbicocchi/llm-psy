@@ -1370,6 +1370,111 @@
       "identity_note": "Original run ID; redacted metadata cannot independently reproduce its identity hash."
     }
   },
+  "060d3836a3c998fcecad59a0ff7205d33ec16e48502727085e4f589eb044a872": {
+    "run_id": "060d3836a3c998fcecad59a0ff7205d33ec16e48502727085e4f589eb044a872",
+    "model_id": "moondream",
+    "config": {
+      "protocol": "psybench-1",
+      "experiment_id": "organic-inkblots-exploratory-v1",
+      "questionnaire": {
+        "id": "organic-inkblots-en-v1",
+        "title": "Synthetic organic inkblots — exploratory visual descriptions",
+        "kind": "visual-open-ended",
+        "language": "en",
+        "requires": [
+          "vision"
+        ],
+        "source": "Nine original procedural illustrations from folded-ink-organic-v1, v2 and v3. Generator versions, seeds and SHA-256 hashes are recorded in assets/blots-organic/manifest*.json. These are synthetic illustrations, separate from historical Rorschach plates.",
+        "limitations": "Exploratory image description only. These synthetic inkblots have no validated psychological scoring and do not constitute a clinical assessment or evidence of model personality. Each image is presented independently.",
+        "instruction": "Describe the image. Distinguish visible shapes from possible interpretations. There is no single correct interpretation.",
+        "items": [
+          {
+            "id": "organic-001",
+            "image": "assets/blots-organic/organic-001.png",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "organic-002",
+            "image": "assets/blots-organic/organic-002.png",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "organic-003",
+            "image": "assets/blots-organic/organic-003.png",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "organic-004",
+            "image": "assets/blots-organic/organic-004.png",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "organic-005",
+            "image": "assets/blots-organic/organic-005.png",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "organic-006",
+            "image": "assets/blots-organic/organic-006.png",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "organic-007",
+            "image": "assets/blots-organic/organic-007.png",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "organic-008",
+            "image": "assets/blots-organic/organic-008.png",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "organic-009",
+            "image": "assets/blots-organic/organic-009.png",
+            "text": "What do you see in this image?"
+          }
+        ]
+      },
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "seed": 42,
+      "num_ctx": 2048,
+      "option_order": "seeded-cyclic-v1"
+    },
+    "artifact": {
+      "name": "moondream:1.8b",
+      "digest": "55fc3abd386771e5b5d1bbcc732f3c3f4df6e9f9f08f1131f9cc27ba2d1eec5b",
+      "details": {
+        "family": "phi2",
+        "parameter_size": "1B",
+        "quantization_level": "Q4_0",
+        "format": "gguf"
+      }
+    },
+    "backend": {
+      "name": "ollama",
+      "version": "0.40.16"
+    },
+    "hardware": {
+      "environment_id": "3548c8e76452836c347f2d710492b1c915ff41cacdec253785421a2cee342cd5",
+      "details": "Withheld in public snapshot"
+    },
+    "image_hashes": {
+      "organic-001": "d01c06020fe8f1566d751a998e4f7748feddc4c950893fa91de68978cb5acd7e",
+      "organic-002": "36ac174c90c8bd944be949069bc7684456c2100b2e56b08abce5194b65c1f043",
+      "organic-003": "a8080bca01fa336a8e43797cbde517d02abea02b6e8487210642cd9e99685c98",
+      "organic-004": "f1e3f3c37b27d94d76cb35e9230073a7d55241e03ec2011f78d5868088d1a363",
+      "organic-005": "803d0586571a3f9b4e15a824938694d45be697bbd26ac58067b603c8fb64fed5",
+      "organic-006": "fab919c08c788a853a5b3fbd014e197abc4a81ad5d92a9aac189b24e0915c6d5",
+      "organic-007": "ae86d21e970a871b9b0140590790f3f1f9cc00c14b1fcae3dd2a88a87986a1ec",
+      "organic-008": "2242c33f543f80b9d725f91d3a171c13b0ee94243e833191f26d13a51443e83d",
+      "organic-009": "95da75ed7239f2bc7dab04088fa5348a44ffd1b02e43e26c30f4c4e9100d2fd5"
+    },
+    "publication": {
+      "policy": "public-snapshot-v1",
+      "identity_note": "Original run ID; redacted metadata cannot independently reproduce its identity hash."
+    }
+  },
   "07433bae915d77aefe8a0e896d437096f01157302b12d05e4070f5d9364b33c3": {
     "run_id": "07433bae915d77aefe8a0e896d437096f01157302b12d05e4070f5d9364b33c3",
     "model_id": "smollm2-135m",
@@ -24731,6 +24836,117 @@
       "identity_note": "Original run ID; redacted metadata cannot independently reproduce its identity hash."
     }
   },
+  "aa26ed4b5b74b91a0af0183e76473b4a0cac13160feb4aaf223cf3dfa7b26621": {
+    "run_id": "aa26ed4b5b74b91a0af0183e76473b4a0cac13160feb4aaf223cf3dfa7b26621",
+    "model_id": "moondream",
+    "config": {
+      "protocol": "psybench-1",
+      "experiment_id": "rorschach-exploratory-v1",
+      "questionnaire": {
+        "id": "rorschach-original-reproductions-en-v1",
+        "title": "Historical Rorschach plates — exploratory visual descriptions",
+        "kind": "visual-open-ended",
+        "language": "en",
+        "requires": [
+          "vision"
+        ],
+        "source": "Hermann Rorschach (1921). Ten unnormalized JPEG reproductions from Wikimedia Commons, Rorschach blot 01.jpg through Rorschach blot 10.jpg. See assets/rorschach/manifest.json for source revisions, public-domain metadata and checksums. These digital reproductions are not certified clinical stimulus materials.",
+        "limitations": "Exploratory image description only, not a standardized clinical Rorschach administration or validated personality assessment. Famous plates and common interpretations may occur in training data; responses cannot distinguish visual perception from memorized associations. Each plate is presented independently, without a clinical inquiry phase.",
+        "instruction": "Describe the image. Distinguish visible shapes from possible interpretations. There is no single correct interpretation.",
+        "items": [
+          {
+            "id": "rorschach-01",
+            "image": "assets/rorschach/plate-01.jpg",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "rorschach-02",
+            "image": "assets/rorschach/plate-02.jpg",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "rorschach-03",
+            "image": "assets/rorschach/plate-03.jpg",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "rorschach-04",
+            "image": "assets/rorschach/plate-04.jpg",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "rorschach-05",
+            "image": "assets/rorschach/plate-05.jpg",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "rorschach-06",
+            "image": "assets/rorschach/plate-06.jpg",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "rorschach-07",
+            "image": "assets/rorschach/plate-07.jpg",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "rorschach-08",
+            "image": "assets/rorschach/plate-08.jpg",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "rorschach-09",
+            "image": "assets/rorschach/plate-09.jpg",
+            "text": "What do you see in this image?"
+          },
+          {
+            "id": "rorschach-10",
+            "image": "assets/rorschach/plate-10.jpg",
+            "text": "What do you see in this image?"
+          }
+        ]
+      },
+      "temperature": 0.7,
+      "max_tokens": 512,
+      "seed": 42,
+      "num_ctx": 2048,
+      "option_order": "seeded-cyclic-v1"
+    },
+    "artifact": {
+      "name": "moondream:1.8b",
+      "digest": "55fc3abd386771e5b5d1bbcc732f3c3f4df6e9f9f08f1131f9cc27ba2d1eec5b",
+      "details": {
+        "family": "phi2",
+        "parameter_size": "1B",
+        "quantization_level": "Q4_0",
+        "format": "gguf"
+      }
+    },
+    "backend": {
+      "name": "ollama",
+      "version": "0.40.16"
+    },
+    "hardware": {
+      "environment_id": "3548c8e76452836c347f2d710492b1c915ff41cacdec253785421a2cee342cd5",
+      "details": "Withheld in public snapshot"
+    },
+    "image_hashes": {
+      "rorschach-01": "5c0c7f31abb360d60fb8a4422509530e2248119d9f6590ca24332ded52a971eb",
+      "rorschach-02": "d0a928f2f2f2c1d91fe8fc6f5e570c9ac31c8b1c01bde4e21eed219e9591fca6",
+      "rorschach-03": "f3218d95230adaa84431cbf7b1a83f0cf6b9ef1f4d6006310c8c0bfdc1344b24",
+      "rorschach-04": "3217312d2c453882be5573543bcdcc6bacb39f27cf8241e1c3af47e8b4b82e8b",
+      "rorschach-05": "561ddf5c83831f470dc44e0ff1714dcf20b4d168b9622938bf31c07689909427",
+      "rorschach-06": "b88cc168263fa2c09a829d88e710671f7414dabc5394e6582e420043516c745e",
+      "rorschach-07": "0df5ae2edf869e032f7183fc7629e99a21546c5664e7ab3ec968f3b460a1bfa2",
+      "rorschach-08": "beae60310d2edc449719290b79e278d97d58bd9c3ae762900970166bc787b87e",
+      "rorschach-09": "1606759fbf0a574735e6df5cc505fbef61998be28f1e79967ef06b4d3ffe186d",
+      "rorschach-10": "1db0ca155611d179cf699b0a49d656e71e1d3d1a64afba37e94d2079c5c01c22"
+    },
+    "publication": {
+      "policy": "public-snapshot-v1",
+      "identity_note": "Original run ID; redacted metadata cannot independently reproduce its identity hash."
+    }
+  },
   "ab163fed1f8a64dcc6f9d33af1384db88d7ff1491c202fafd2ed7dbc87c50a6d": {
     "run_id": "ab163fed1f8a64dcc6f9d33af1384db88d7ff1491c202fafd2ed7dbc87c50a6d",
     "model_id": "llama3.2-1b",
@@ -36370,117 +36586,6 @@
       "details": "Withheld in public snapshot"
     },
     "image_hashes": {},
-    "publication": {
-      "policy": "public-snapshot-v1",
-      "identity_note": "Original run ID; redacted metadata cannot independently reproduce its identity hash."
-    }
-  },
-  "ed56e5c31594632cea1644b4954400cfaaf26ff1d93d5b543c8f81059ca47aad": {
-    "run_id": "ed56e5c31594632cea1644b4954400cfaaf26ff1d93d5b543c8f81059ca47aad",
-    "model_id": "moondream",
-    "config": {
-      "protocol": "psybench-1",
-      "experiment_id": "rorschach-exploratory-v1",
-      "questionnaire": {
-        "id": "rorschach-original-reproductions-en-v1",
-        "title": "Historical Rorschach plates — exploratory visual descriptions",
-        "kind": "visual-open-ended",
-        "language": "en",
-        "requires": [
-          "vision"
-        ],
-        "source": "Hermann Rorschach (1921). Ten unnormalized JPEG reproductions from Wikimedia Commons, Rorschach blot 01.jpg through Rorschach blot 10.jpg. See assets/rorschach/manifest.json for source revisions, public-domain metadata and checksums. These digital reproductions are not certified clinical stimulus materials.",
-        "limitations": "Exploratory image description only, not a standardized clinical Rorschach administration or validated personality assessment. Famous plates and common interpretations may occur in training data; responses cannot distinguish visual perception from memorized associations. Each plate is presented independently, without a clinical inquiry phase.",
-        "instruction": "Describe the image. Distinguish visible shapes from possible interpretations. There is no single correct interpretation.",
-        "items": [
-          {
-            "id": "rorschach-01",
-            "image": "assets/rorschach/plate-01.jpg",
-            "text": "What do you see in this image?"
-          },
-          {
-            "id": "rorschach-02",
-            "image": "assets/rorschach/plate-02.jpg",
-            "text": "What do you see in this image?"
-          },
-          {
-            "id": "rorschach-03",
-            "image": "assets/rorschach/plate-03.jpg",
-            "text": "What do you see in this image?"
-          },
-          {
-            "id": "rorschach-04",
-            "image": "assets/rorschach/plate-04.jpg",
-            "text": "What do you see in this image?"
-          },
-          {
-            "id": "rorschach-05",
-            "image": "assets/rorschach/plate-05.jpg",
-            "text": "What do you see in this image?"
-          },
-          {
-            "id": "rorschach-06",
-            "image": "assets/rorschach/plate-06.jpg",
-            "text": "What do you see in this image?"
-          },
-          {
-            "id": "rorschach-07",
-            "image": "assets/rorschach/plate-07.jpg",
-            "text": "What do you see in this image?"
-          },
-          {
-            "id": "rorschach-08",
-            "image": "assets/rorschach/plate-08.jpg",
-            "text": "What do you see in this image?"
-          },
-          {
-            "id": "rorschach-09",
-            "image": "assets/rorschach/plate-09.jpg",
-            "text": "What do you see in this image?"
-          },
-          {
-            "id": "rorschach-10",
-            "image": "assets/rorschach/plate-10.jpg",
-            "text": "What do you see in this image?"
-          }
-        ]
-      },
-      "temperature": 0.7,
-      "max_tokens": 512,
-      "seed": 42,
-      "num_ctx": 2048,
-      "option_order": "seeded-cyclic-v1"
-    },
-    "artifact": {
-      "name": "moondream:1.8b",
-      "digest": "55fc3abd386771e5b5d1bbcc732f3c3f4df6e9f9f08f1131f9cc27ba2d1eec5b",
-      "details": {
-        "family": "phi2",
-        "parameter_size": "1B",
-        "quantization_level": "Q4_0",
-        "format": "gguf"
-      }
-    },
-    "backend": {
-      "name": "ollama",
-      "version": "0.40.15"
-    },
-    "hardware": {
-      "environment_id": "b8807eb53d0ee9732b990db8b0dafd37f290bc27e424a56eaa825c9cb761c9f8",
-      "details": "Withheld in public snapshot"
-    },
-    "image_hashes": {
-      "rorschach-01": "5c0c7f31abb360d60fb8a4422509530e2248119d9f6590ca24332ded52a971eb",
-      "rorschach-02": "d0a928f2f2f2c1d91fe8fc6f5e570c9ac31c8b1c01bde4e21eed219e9591fca6",
-      "rorschach-03": "f3218d95230adaa84431cbf7b1a83f0cf6b9ef1f4d6006310c8c0bfdc1344b24",
-      "rorschach-04": "3217312d2c453882be5573543bcdcc6bacb39f27cf8241e1c3af47e8b4b82e8b",
-      "rorschach-05": "561ddf5c83831f470dc44e0ff1714dcf20b4d168b9622938bf31c07689909427",
-      "rorschach-06": "b88cc168263fa2c09a829d88e710671f7414dabc5394e6582e420043516c745e",
-      "rorschach-07": "0df5ae2edf869e032f7183fc7629e99a21546c5664e7ab3ec968f3b460a1bfa2",
-      "rorschach-08": "beae60310d2edc449719290b79e278d97d58bd9c3ae762900970166bc787b87e",
-      "rorschach-09": "1606759fbf0a574735e6df5cc505fbef61998be28f1e79967ef06b4d3ffe186d",
-      "rorschach-10": "1db0ca155611d179cf699b0a49d656e71e1d3d1a64afba37e94d2079c5c01c22"
-    },
     "publication": {
       "policy": "public-snapshot-v1",
       "identity_note": "Original run ID; redacted metadata cannot independently reproduce its identity hash."

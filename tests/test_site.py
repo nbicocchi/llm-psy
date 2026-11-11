@@ -21,13 +21,13 @@ class WebsiteLanguageTests(unittest.TestCase):
 
     def test_english_navigation_and_accessibility(self):
         layout = (SITE / "_layouts/default.html").read_text(encoding="utf-8")
-        for label in ('aria-label="Main navigation"', '>Comparisons<', '>Models<', '>Visual stimuli<', '>Methodology<'):
+        for label in ('aria-label="Main navigation"', '>Comparisons<', '>Models<', '>Visual stimuli<', '>Questionnaires<'):
             self.assertIn(label, layout)
-        visual = (SITE / "visual.html").read_text(encoding="utf-8")
+        visual = (SITE / "_includes/stimulus_card.html").read_text(encoding="utf-8")
         self.assertIn('alt="Inkblot stimulus', visual)
 
     def test_no_original_italian_labels_in_pages(self):
-        for name in ("index.html", "models.html", "visual.html", "rorschach.html", "tests.html", "methodology.md", "_layouts/default.html", "_layouts/model.html", "_layouts/stimulus.html", "_includes/run_card.html"):
+        for name in ("index.html", "models.html", "visual.html", "rorschach.html", "tests.html", "_layouts/default.html", "_layouts/stimulus.html", "_includes/run_card.html", "_includes/experiment_card.html", "_includes/experiment_heading.html", "_includes/stimulus_card.html", "_includes/visual_experiment_description.html"):
             source = (SITE / name).read_text(encoding="utf-8")
             for label in ("Confronti", "Stimoli visivi", "Ripetizioni", "ripetizione", "Filtra", "Il laboratorio", "diagnosi", "punteggi", "Navigazione", "Metodo e limiti"):
                 with self.subTest(file=name, label=label):
@@ -39,9 +39,9 @@ class WebsiteLanguageTests(unittest.TestCase):
             with patch("psybench.catalog.load_config", return_value=config):
                 catalog = export_catalog(Path(directory))
             self.assertEqual(catalog["text_tests"], 15)
-            self.assertEqual(catalog["visual_tests"], 1)
+            self.assertEqual(catalog["visual_tests"], 2)
             self.assertEqual(catalog["score_series"], 25)
-            self.assertEqual(catalog["planned_trials"], 11262)
+            self.assertEqual(catalog["planned_trials"], 11346)
             self.assertFalse((Path(directory) / "site/_data/results.json").exists())
             swls = next(e for e in catalog["experiments"] if e["id"] == "swls-en-v1")
             self.assertEqual((swls["traits"][0]["min"], swls["traits"][0]["max"]), (5, 35))
@@ -65,7 +65,7 @@ class WebsiteLanguageTests(unittest.TestCase):
         self.assertEqual({item["trait"] for item in cooperation["item_definitions"]}, {"Cooperation"})
 
     def test_item_disclosure_uses_native_details_and_escaped_text(self):
-        source = (SITE / "tests.html").read_text(encoding="utf-8")
+        source = (SITE / "_includes/experiment_card.html").read_text(encoding="utf-8")
         self.assertIn('<summary>View all {{ test.items }} items', source)
         self.assertIn('{{ item.text | escape }}', source)
         self.assertIn('{{ test.instruction | escape }}', source)

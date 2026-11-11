@@ -249,7 +249,7 @@ def main(argv=None):
     for index, (seed, title, style, layout) in enumerate(presets, 1):
         filename = f"organic-{index + (6 if experimental else 3 if diverse else 0):03d}.png"
         content = organic_png(seed, style, layout=layout)
-        source = ROOT / "assets" / directory / filename
+        source = ROOT / "assets/blots-organic" / filename
         public = ROOT / "site/assets" / directory / filename
         write_if_unchanged(source, content)
         write_if_unchanged(public, content)
@@ -259,7 +259,7 @@ def main(argv=None):
         if diverse or experimental:
             manifest["stimuli"][-1].update(layout=layout, generator=version)
     content = (json.dumps(manifest, indent=2) + "\n").encode()
-    write_if_unchanged(ROOT / "assets" / directory / "manifest.json", content)
+    write_if_unchanged(ROOT / "assets/blots-organic" / ("manifest-v3.json" if experimental else "manifest-v2.json" if diverse else "manifest.json"), content)
     print(f"Prepared {len(manifest['stimuli'])} new folded-ink illustrations. No experiments executed.")
 
 

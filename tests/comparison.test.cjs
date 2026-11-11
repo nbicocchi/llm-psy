@@ -61,7 +61,7 @@ class Element {
 test('renderer initializes charts, filters, model selection and cell inspection', () => {
   const scale = id => ({id, label: `Fixture / ${id}`, trait: id, experiment: 'fixture', min: 1, max: 5, aggregation: 'mean', protocol: {temperature: 0.7}, questionnaire_hash: 'q'});
   const cell = mean => ({mean, n: 1, planned: 3, sd: null, percent: position(mean, 1, 5), repetitions: [{score: mean, repetition: 1}], run_id: 'run', counts: {ok: 1, refusal: 0, invalid: 0, error: 0}, expected: 3});
-  const group = {id: 'group', backend: {version: 'test'}, hardware: {}, columns: [scale('x'), scale('y')], rows: rows.map(row => ({...row, url: `/models/${row.id}/`, digest: 'digest', mode: 'Model default thinking policy', cells: Object.fromEntries(Object.entries(row.cells).map(([key, value]) => [key, value.mean === null ? {...cell(3), mean: null, n: 0, percent: null, repetitions: []} : cell(value.mean)]))}))};
+  const group = {id: 'group', backend: {version: 'test'}, hardware: {}, columns: [scale('x'), scale('y')], rows: rows.map(row => ({...row, url: `/models/#${row.id}`, digest: 'digest', mode: 'Model default thinking policy', cells: Object.fromEntries(Object.entries(row.cells).map(([key, value]) => [key, value.mean === null ? {...cell(3), mean: null, n: 0, percent: null, repetitions: []} : cell(value.mean)]))}))};
   const ids = {};
   const selectIds = ['cohort-select', 'family-select', 'model-select', 'dot-scale', 'scatter-x', 'scatter-y'];
   const document = {

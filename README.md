@@ -99,8 +99,9 @@ Edit `config/models.toml`. Currently configured:
 | TinyLlama | `tinyllama:1.1b` |
 | Phi-4 Mini | `phi4-mini:3.8b` |
 | Moondream | `moondream:1.8b` — vision only |
+| Qwen 3.5 | `qwen3.5:9b` — visual experiments enabled, `think = false` |
 
-These are 16 text models and one specialized vision model, not a controlled comparison at equal size or quantization. Tag names can differ from actual parameter counts. Saved manifests record resolved digests and metadata.
+These are 16 text models and two models enabled for visual experiments, not a controlled comparison at equal size or quantization. Tag names can differ from actual parameter counts. Saved manifests record resolved digests and metadata.
 
 To add a model:
 
@@ -126,10 +127,11 @@ Edit `config/experiments.toml` and the JSON definitions in `questionnaires/`.
 | IPIP Big Five Factor Markers | 50 | Five sums, 10–50 per trait |
 | Ten IPIP facets | 10 each | One sum per facet, 10–50 |
 | Historical Rorschach reproductions | 10 | Open-ended descriptions; no psychological scoring |
+| Synthetic organic inkblots | 9 | Open-ended descriptions; no psychological scoring |
 
 The IPIP facets are Trust, Morality, Altruism, Cooperation, Modesty, Sympathy, Self-Efficacy, Dutifulness, Cautiousness and Intellect. These overlap with broader inventories and sometimes share item wording: **25 score series do not represent 25 independent constructs**.
 
-The default is three repetitions, temperature 0.7, seed 42 and a 2,048-token context. The current compatible matrix plans **11,262 trials**: `16 × 234 × 3 + 10 × 3`. Nine additional organic illustrations are available as previews; they are not configured experiments and have no fabricated inference results.
+The default is three repetitions, temperature 0.7, seed 42 and a 2,048-token context. The current compatible matrix plans **11,346 trials**: `16 × 234 × 3 + 2 × (10 + 9) × 3`. Two separate visual experiments cover the 10 historical Rorschach plates (`rorschach-exploratory-v1`) and the 9 synthetic organic inkblots (`organic-inkblots-exploratory-v1`, three series of three images). Only saved observations are shown as results.
 
 To add an experiment:
 
@@ -154,21 +156,20 @@ Each item is an independent request without conversation history. Option orders 
 - Raising the repetition target adds missing trials; lowering it does not remove prior targets or observations.
 - Completed trials are not repeated. Technical errors may be retried; invalid answers and refusals are terminal observations, not resampled until a preferred answer appears.
 - Model IDs are locked to tags and digests in `data/models.lock.json`. A mismatch blocks that model; do not delete locks to bypass it.
-- `ollama-metadata-identity-v1` ignores local timestamps, normalizes generated blob paths before the template, and compares parameter groups while preserving repeated-value order. Templates, system prompts, quantization and unknown fields remain checked. Existing locks are not rewritten; new manifests preserve current runtime metadata separately.
+- `ollama-metadata-identity-v1` ignores local timestamps, normalizes generated blob paths before the template, and compares parameter groups in metadata and generated Modelfiles while preserving repeated-value order. Templates, system prompts, quantization and unknown fields remain checked. Existing locks are not rewritten; new manifests preserve current runtime metadata separately.
 - Hardware detection is partial and does not prove which device actually performed inference. Identical seeds do not guarantee bitwise-identical generations.
 - A process lock prevents overlapping runner/export writes. Interruptions preserve completed attempts. Back up the archive while the runner is stopped.
 
 ## Website
 
 - **Comparisons:** heatmap, per-repetition dot plot and selectable-axis scatter. Filters support families and selected models. Heatmap colors are theoretical range positions, not human percentiles or equivalent units across constructs.
-- **Models:** generated profiles retain historical models and separate run variants.
-- **Tests and metrics:** configured instruments, sources, licensing caveats, expandable items and reverse keys.
-- **Visual stimuli:** 19 images, each linking to descriptions grouped by model, run variant and repetition. Image versions are matched by SHA-256, not item name alone.
-- **Methodology:** interpretation, missingness, protocol and reproducibility limitations.
+- **Models:** a single directory with model tags, enabled inputs, parameters, quantization and family/format metadata.
+- **Questionnaires:** configured instruments, sources, licensing caveats, expandable items and reverse keys.
+- **Visual stimuli:** two visibly separate families (10 historical Rorschach plates and 9 synthetic organic inkblots), each image linking to descriptions grouped by model, run variant and repetition. Image versions are matched by SHA-256, not item name alone.
 
-All assets are local: no CDNs, tracking, remote fonts or browser API calls. JavaScript provides charts and filters; static tables and navigation remain available without it. Set `baseurl` in `site/_config.yml` for subdirectory hosting.
+All runtime assets are local: no CDNs, tracking, remote fonts or browser API calls. JavaScript provides charts and filters; static tables and navigation remain available without it. Set `baseurl` in `site/_config.yml` for subdirectory hosting.
 
-The build uses frozen Bundler resolution and custom Jekyll generators. `netlify.toml` configures Netlify to build the public snapshot with base directory `site` and publish directory `_site`. For GitHub Pages, build the static `site/_site/` output using a workflow that supports those plugins; the limited built-in safe-mode build will not generate model and stimulus detail pages. No GitHub Pages deployment workflow is enabled.
+The build uses frozen Bundler resolution and custom Jekyll generators. `netlify.toml` configures Netlify to build the public snapshot with base directory `site` and publish directory `_site`. For GitHub Pages, build the static `site/_site/` output using a workflow that supports those plugins; the limited built-in safe-mode build will not generate stimulus detail pages. No GitHub Pages deployment workflow is enabled.
 
 Netlify uses `BUNDLE_FORCE_RUBY_PLATFORM=true` to compile native gems against its installed Ruby instead of relying on precompiled extensions with a potentially incompatible ABI. The lockfile includes the `ruby` platform and installation remains frozen. If a previous deploy failed with `google/protobuf_c` or `undefined symbol: ruby_abi_version`, retry the deploy without the dependency cache after applying this configuration. A clean native build can take longer and requires the build image's compiler toolchain.
 
@@ -181,7 +182,7 @@ python3 scripts/generate_organic_blots.py --series experimental-v3
 python3 scripts/prepare_rorschach.py --verify
 ```
 
-The first three commands reproduce the original procedural illustrations without inference. Seeds, generator versions and SHA-256 hashes are stored in `assets/blots-organic-v*/manifest.json`; modified outputs are not overwritten. Compressed PNG bytes may differ across zlib versions.
+The first three commands reproduce the original procedural illustrations without inference. Seeds, generator versions and SHA-256 hashes are stored in `assets/blots-organic/manifest*.json`; modified outputs are not overwritten. Compressed PNG bytes may differ across zlib versions.
 
 The last command verifies the historical archive offline. If preparing missing Rorschach files, `python3 scripts/prepare_rorschach.py` uses the saved Commons provenance and may download files. The archive retains original JPEG bytes, source revisions and licensing metadata without cropping or color normalization.
 

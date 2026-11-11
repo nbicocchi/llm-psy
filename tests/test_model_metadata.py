@@ -64,6 +64,30 @@ class ModelMetadataTests(unittest.TestCase):
         changed["parameters"] = 'temperature 0.6\nstop "second"\nstop "first"'
         self.assertNotEqual(metadata_identity(changed), metadata_identity(self.metadata))
 
+    def test_modelfile_parameter_reordering_preserves_lock(self):
+        original = 'TEMPLATE "Question: {{ .Prompt }}\nAnswer:"\nPARAMETER stop first\nPARAMETER stop second\nPARAMETER temperature 0\nLICENSE "license"\n'
+        saved = deepcopy(self.artifact)
+        saved["show"]["modelfile"] = original
+        self.path.write_text(json.dumps({"fixture": saved}))
+        before = self.path.read_bytes()
+        self.metadata["modelfile"] = original.replace('PARAMETER temperature 0\n', '').replace('PARAMETER stop first', 'PARAMETER temperature 0\nPARAMETER stop first')
+        self.assertEqual(self.check(), saved)
+        self.assertEqual(self.path.read_bytes(), before)
+        for old, new in (("temperature 0", "temperature 1"),
+                         ("stop first\nPARAMETER stop second", "stop second\nPARAMETER stop first"),
+                         ("Question:", "Changed:")):
+            with self.subTest(change=new):
+                self.client.show.return_value = {**self.metadata, "modelfile": self.metadata["modelfile"].replace(old, new)}
+                with self.assertRaisesRegex(RuntimeError, "metadata changed"):
+                    self.check()
+
+    def test_parameter_lines_inside_template_remain_significant(self):
+        for quote in ('"', '"""'):
+            original = f'TEMPLATE {quote}prompt\nPARAMETER temperature 0\nPARAMETER stop first\n{quote}\n'
+            changed = original.replace('PARAMETER temperature 0\nPARAMETER stop first', 'PARAMETER stop first\nPARAMETER temperature 0')
+            self.assertNotEqual(metadata_identity({"modelfile": original}),
+                                metadata_identity({"modelfile": changed}))
+
     def test_digest_and_quantization_changes_remain_blocked(self):
         for field, value in (("digest", "different"), ("details", {"quantization_level": "Q8"})):
             with self.subTest(field=field):

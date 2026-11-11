@@ -33,7 +33,7 @@ class OrganicBlotTests(unittest.TestCase):
 
     def test_seeded_output_matches_versioned_fixture(self):
         # Cross-zlib byte equality is not promised; compare decoded pixels too.
-        manifest = json.loads((ROOT / "assets/blots-organic-v1/manifest.json").read_text())
+        manifest = json.loads((ROOT / "assets/blots-organic/manifest.json").read_text())
         entry = manifest["stimuli"][1]
         saved = (ROOT / entry["file"]).read_bytes()
         self.assertEqual(hashlib.sha256(saved).hexdigest(), entry["sha256"])
@@ -59,7 +59,7 @@ class OrganicBlotTests(unittest.TestCase):
             organic_png(1, layout="unknown")
 
     def test_new_series_has_distinct_compositions_and_verified_public_copies(self):
-        manifest = json.loads((ROOT / "assets/blots-organic-v2/manifest.json").read_text())
+        manifest = json.loads((ROOT / "assets/blots-organic/manifest-v2.json").read_text())
         self.assertEqual(manifest["generator"], "folded-ink-diverse-v2")
         self.assertEqual({entry["layout"] for entry in manifest["stimuli"]}, {"wide", "vertical", "islands"})
         shapes = {}
@@ -83,7 +83,7 @@ class OrganicBlotTests(unittest.TestCase):
         self.assertLess(shapes["islands"][2], shapes["wide"][2])
 
     def test_third_series_is_separate_and_has_three_new_layouts(self):
-        manifest = json.loads((ROOT / "assets/blots-organic-v3/manifest.json").read_text())
+        manifest = json.loads((ROOT / "assets/blots-organic/manifest-v3.json").read_text())
         self.assertEqual(manifest["generator"], "folded-ink-experimental-v3")
         self.assertEqual({entry["layout"] for entry in manifest["stimuli"]}, {"arch", "crescent", "branches"})
         self.assertEqual([entry["id"] for entry in manifest["stimuli"]], ["organic-007", "organic-008", "organic-009"])

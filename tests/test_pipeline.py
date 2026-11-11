@@ -68,7 +68,7 @@ class FakeOllama:
 class ProtocolTests(unittest.TestCase):
     def test_full_questionnaires_and_keys(self):
         models, experiments, runtime = load_config(ROOT)
-        self.assertEqual(len(models), 17)
+        self.assertEqual(len(models), 18)
         self.assertEqual(sum(model["capabilities"] == ["text"] for model in models), 16)
         self.assertTrue(all(model.get("think") is False for model in models if model["model"].startswith("qwen3:")))
         qwen3 = next(model for model in models if model["id"] == "qwen3-0.6b")

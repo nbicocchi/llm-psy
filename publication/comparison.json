@@ -517,7 +517,7 @@
         {
           "id": "6bc1cd558127fcfaf261241e60d448e713e83d258c6712954fb90ce767b9cc5b",
           "model": "falcon3-1b",
-          "url": "/models/falcon3-1b/",
+          "url": "/models/#falcon3-1b",
           "digest": "5449d006a9c78700d1e319d00d6cc0fa4b92fac29d72ef0d7e2854ec32fe5c13",
           "family": "llama",
           "mode": "Model default thinking policy",
@@ -1047,7 +1047,7 @@
         {
           "id": "5eec2d269787e9b444938d6c5eab36ff4803d0b8372b96e33530684d3ccc8a05",
           "model": "gemma3-1b",
-          "url": "/models/gemma3-1b/",
+          "url": "/models/#gemma3-1b",
           "digest": "97558784bdc9175075a72655bf360b15da17df6b3b9e5182af9f8c0c8e58ba7c",
           "family": "gemma3",
           "mode": "Model default thinking policy",
@@ -1857,7 +1857,7 @@
         {
           "id": "d8a4c48d62bc18774a2019562c8993e1447217250c66985f2e399d80e254e4d0",
           "model": "gemma3-270m",
-          "url": "/models/gemma3-270m/",
+          "url": "/models/#gemma3-270m",
           "digest": "e7d36fb2c3b3293cfe56d55889867a064b3a2b22e98335f2e6e8a387e081d6be",
           "family": "gemma3",
           "mode": "Model default thinking policy",
@@ -2342,7 +2342,7 @@
         {
           "id": "d2a9e9f220c86a3dabe8de3971640409046da2430934a60476766e61d609d984",
           "model": "granite3.3-2b",
-          "url": "/models/granite3.3-2b/",
+          "url": "/models/#granite3.3-2b",
           "digest": "07bd1f170855240f9e162bf54ea494a8bc1c73d8cbd1365d7fccbeb7d2504947",
           "family": "granite",
           "mode": "Model default thinking policy",
@@ -2957,7 +2957,7 @@
         {
           "id": "4efc1318e3bbac34ee2cba557c34357beb5dcc211acf724ef2e7dd96237be94b",
           "model": "granite4-350m",
-          "url": "/models/granite4-350m/",
+          "url": "/models/#granite4-350m",
           "digest": "5eee845b49c4b72ef9e385463a1e2ea9f6f937e08b019f3bbecec12bc1927221",
           "family": "granite",
           "mode": "Model default thinking policy",
@@ -3767,7 +3767,7 @@
         {
           "id": "b794c2007b931374e147dac7dc3cc866fc207ac26ede191fa0be15b4f00601d3",
           "model": "llama3.2-1b",
-          "url": "/models/llama3.2-1b/",
+          "url": "/models/#llama3.2-1b",
           "digest": "baf6a787fdffd633537aa2eb51cfd54cb93ff08e28040095462bb63daf552878",
           "family": "llama",
           "mode": "Model default thinking policy",
@@ -4577,7 +4577,7 @@
         {
           "id": "9e49c39f21c686654fde2f8e34c972cd27f8145f0c3562f848c66e1f4fe894dd",
           "model": "llama3.2-3b",
-          "url": "/models/llama3.2-3b/",
+          "url": "/models/#llama3.2-3b",
           "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
           "family": "llama",
           "mode": "Model default thinking policy",
@@ -5387,7 +5387,7 @@
         {
           "id": "ad40cbccb86299786a17743b0757faf278a9ab93e9248521d7d450fe9b390fcb",
           "model": "phi4-mini-3.8b",
-          "url": "/models/phi4-mini-3.8b/",
+          "url": "/models/#phi4-mini-3.8b",
           "digest": "78fad5d182a7c33065e153a5f8ba210754207ba9d91973f57dffa7f487363753",
           "family": "phi3",
           "mode": "Model default thinking policy",
@@ -6184,7 +6184,7 @@
         {
           "id": "a11c25af2fd0161a8601c0a755d26105ec58fde9ba40e7e853e5d5d39ec1eb27",
           "model": "qwen2.5-0.5b",
-          "url": "/models/qwen2.5-0.5b/",
+          "url": "/models/#qwen2.5-0.5b",
           "digest": "a8b0c51577010a279d933d14c2a8ab4b268079d44c5c8830c0a93900f1827c67",
           "family": "qwen2",
           "mode": "Model default thinking policy",
@@ -6758,7 +6758,7 @@
         {
           "id": "6e34ad137291faacf680c68edab26075933979350dc5de1459d5f25b95c6247e",
           "model": "qwen2.5-1.5b",
-          "url": "/models/qwen2.5-1.5b/",
+          "url": "/models/#qwen2.5-1.5b",
           "digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
           "family": "qwen2",
           "mode": "Model default thinking policy",
@@ -7536,7 +7536,7 @@
         {
           "id": "55ebf4a44b82234341d00de4f6f920512d4cc0169a1c34c8d54132d45e0c4235",
           "model": "qwen3-0.6b",
-          "url": "/models/qwen3-0.6b/",
+          "url": "/models/#qwen3-0.6b",
           "digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
           "family": "qwen3",
           "mode": "Thinking disabled",
@@ -8334,7 +8334,7 @@
         {
           "id": "c32188e3cf2633aa8bc0b218991319a4a90203c3db6d2693bbbc94c8b8635646",
           "model": "qwen3-1.7b",
-          "url": "/models/qwen3-1.7b/",
+          "url": "/models/#qwen3-1.7b",
           "digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
           "family": "qwen3",
           "mode": "Thinking disabled",
@@ -9144,7 +9144,7 @@
         {
           "id": "ef83ff60ced15ca7d080dcc38528cba2a77f5a27441950c5dd05eb7066a66ceb",
           "model": "smollm2-1.7b",
-          "url": "/models/smollm2-1.7b/",
+          "url": "/models/#smollm2-1.7b",
           "digest": "cef4a1e09247f018ca0c482ad4c2ce1474aba5e87f245dacf97f07948d05d8b4",
           "family": "llama",
           "mode": "Model default thinking policy",
@@ -9954,7 +9954,7 @@
         {
           "id": "92b7b7b8373c46690d13b07e8557034c2e2609e1bd13e07b83ede1f40e1a18eb",
           "model": "smollm2-135m",
-          "url": "/models/smollm2-135m/",
+          "url": "/models/#smollm2-135m",
           "digest": "9077fe9d2ae1a4a41a868836b56b8163731a8fe16621397028c2c76f838c6907",
           "family": "llama",
           "mode": "Model default thinking policy",
@@ -10457,7 +10457,7 @@
         {
           "id": "94c951cd6ae0110e4b1e1ea3cbb87893ef6e200c8c9e428d1f9da3e936c5e170",
           "model": "smollm2-360m",
-          "url": "/models/smollm2-360m/",
+          "url": "/models/#smollm2-360m",
           "digest": "297281b699fc51376006233ca400cd664c4f7b80ed88a47ef084f1e4b089803b",
           "family": "llama",
           "mode": "Model default thinking policy",
@@ -11061,7 +11061,7 @@
         {
           "id": "462f3cb23f8308d41fdf2e64838cd701e36591fc8e7a2a74e3b0306cc2528616",
           "model": "tinyllama-1.1b",
-          "url": "/models/tinyllama-1.1b/",
+          "url": "/models/#tinyllama-1.1b",
           "digest": "2644915ede352ea7bdfaff0bfac0be74c719d5d5202acb63a6fb095b52f394a4",
           "family": "llama",
           "mode": "Model default thinking policy",

@@ -30,7 +30,7 @@ def export_catalog(root):
             "repetitions": experiment["repetitions"], "traits": traits,
             "aggregation": scoring_rule(q) if q["kind"] == "likert" else None,
             "models": compatible, "source": q.get("source", ""),
-            "source_url": q.get("source_url"), "license": q.get("license", "See the source and methodology; review rights before reuse."),
+            "source_url": q.get("source_url"), "license": q.get("license", "See the source and attribution; review rights before reuse."),
             "permission_url": q.get("permission_url"), "limitations": q.get("limitations"),
         })
     catalog = {

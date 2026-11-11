@@ -68,6 +68,17 @@ class PublicationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "No publishable source image"):
             prepare_publication(self.root)
 
+    def test_consolidated_organic_sources_keep_their_public_image_urls(self):
+        (self.root / "assets/rorschach/manifest.json").unlink()
+        write_json(self.root / "assets/blots-organic/manifest-v2.json", {
+            "stimuli": [{"sha256": "image-sha", "file": "assets/blots-organic/organic-004.png",
+                         "url": "/assets/blots-organic-v2/organic-004.png"}],
+        })
+        prepare_publication(self.root)
+        result = read_json(self.root / "publication/results.json")["visual"][0]
+        self.assertEqual(result["image"], "assets/blots-organic-v2/organic-004.png")
+        self.assertEqual(result["response"], self.results["visual"][0]["response"])
+
     def test_netlify_build_uses_public_mode_and_raw_files_are_excluded(self):
         root = Path(__file__).resolve().parents[1]
         config = tomllib.loads((root / "netlify.toml").read_text())

@@ -20,6 +20,15 @@ def metadata_identity(metadata):
         # Generated blob directives precede TEMPLATE. Do not rewrite prompt text.
         header, separator, template = result["modelfile"].partition("TEMPLATE ")
         header = re.sub(r"(?m)^FROM /[^\n]+/(sha256-[0-9a-f]{64})$", r"FROM \1", header)
+        # Only sort the generated parameter block immediately after TEMPLATE.
+        # Parse the quoted template first so prompt text is never normalized.
+        match = re.match(r'("""[\s\S]*?"""|"(?:\\.|[^"\\])*")\n((?:PARAMETER [^\n]+\n)+)', template)
+        if match:
+            lines = match[2].splitlines(keepends=True)
+            if all(len(line.split(maxsplit=2)) == 3 for line in lines):
+                # Stable sorting retains the order of repeated parameters.
+                ordered = sorted(lines, key=lambda line: line.split(maxsplit=2)[1])
+                template = template[:match.start(2)] + "".join(ordered) + template[match.end(2):]
         result["modelfile"] = header + separator + template
     if isinstance(result.get("parameters"), str):
         groups = {}

@@ -1,0 +1,6 @@
+{% assign experiment = include.experiment %}
+{% include experiment_heading.html test=experiment %}
+<p><strong>Compatible models:</strong> {{ experiment.models | join: ', ' | escape }}</p>
+<p>{{ experiment.instruction | escape }}</p>
+<p><strong>Question for each image:</strong> {{ experiment.item_definitions.first.text | escape }}</p>
+<h3>Visual inputs</h3>

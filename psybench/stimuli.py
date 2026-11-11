@@ -20,9 +20,9 @@ def build_stimuli(root, results, manifests):
         return stimulus
 
     for relative, historical in (
-        ("assets/blots-organic-v1/manifest.json", False),
-        ("assets/blots-organic-v2/manifest.json", False),
-        ("assets/blots-organic-v3/manifest.json", False),
+        ("assets/blots-organic/manifest.json", False),
+        ("assets/blots-organic/manifest-v2.json", False),
+        ("assets/blots-organic/manifest-v3.json", False),
         ("assets/rorschach/manifest.json", True),
     ):
         path = root / relative
@@ -35,7 +35,7 @@ def build_stimuli(root, results, manifests):
                 raise ValueError(f"Stimulus hash mismatch: {item['file']}")
             add({
                 "id": item["id"], "title": f"Rorschach plate {item['plate']}" if historical else item["title"],
-                "sha256": item["sha256"], "image": "/" + item["file"],
+                "sha256": item["sha256"], "image": item.get("url", "/" + item["file"]),
                 "width": item.get("width", document.get("width")), "height": item.get("height", document.get("height")),
                 "historical": historical, "series": "Historical Rorschach plates" if historical else document["generator"],
                 "source_revision": item.get("source_revision"), "license": item.get("license"),

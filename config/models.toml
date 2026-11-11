@@ -24,6 +24,13 @@ model = "moondream:1.8b"
 capabilities = ["vision"]
 
 [[models]]
+id = "qwen3.5-9b"
+model = "qwen3.5:9b"
+# Enabled for visual experiments only; text questionnaires remain opt-in.
+capabilities = ["vision"]
+think = false
+
+[[models]]
 id = "smollm2-135m"
 model = "smollm2:135m"
 capabilities = ["text"]

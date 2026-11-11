@@ -14,7 +14,7 @@ def model_slug(model_id):
 
 
 def model_url(model_id):
-    return f"/models/{model_slug(model_id)}/"
+    return f"/models/#{model_slug(model_id)}"
 
 
 def build_profiles(models, experiments, results, manifests):

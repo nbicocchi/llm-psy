@@ -22,12 +22,12 @@ def prepare_publication(root):
     comparison = read_json(root / "site/_data/comparison.json")
     public_manifests = {}
     images = {}
-    for filename in ("assets/rorschach/manifest.json", "assets/blots-organic-v1/manifest.json",
-                     "assets/blots-organic-v2/manifest.json", "assets/blots-organic-v3/manifest.json"):
+    for filename in ("assets/rorschach/manifest.json", "assets/blots-organic/manifest.json",
+                     "assets/blots-organic/manifest-v2.json", "assets/blots-organic/manifest-v3.json"):
         path = root / filename
         if path.exists():
             for image in read_json(path)["stimuli"]:
-                images[image["sha256"]] = image["file"]
+                images[image["sha256"]] = image.get("url", image["file"]).lstrip("/")
     for run_id, manifest in manifests.items():
         artifact = manifest["artifact"]
         details = artifact.get("details", {})

@@ -1,0 +1,59 @@
+{
+  "id": "organic-inkblots-en-v1",
+  "title": "Synthetic organic inkblots — exploratory visual descriptions",
+  "kind": "visual-open-ended",
+  "language": "en",
+  "requires": [
+    "vision"
+  ],
+  "source": "Nine original procedural illustrations from folded-ink-organic-v1, v2 and v3. Generator versions, seeds and SHA-256 hashes are recorded in assets/blots-organic/manifest*.json. These are synthetic illustrations, separate from historical Rorschach plates.",
+  "limitations": "Exploratory image description only. These synthetic inkblots have no validated psychological scoring and do not constitute a clinical assessment or evidence of model personality. Each image is presented independently.",
+  "instruction": "Describe the image. Distinguish visible shapes from possible interpretations. There is no single correct interpretation.",
+  "items": [
+    {
+      "id": "organic-001",
+      "image": "assets/blots-organic/organic-001.png",
+      "text": "What do you see in this image?"
+    },
+    {
+      "id": "organic-002",
+      "image": "assets/blots-organic/organic-002.png",
+      "text": "What do you see in this image?"
+    },
+    {
+      "id": "organic-003",
+      "image": "assets/blots-organic/organic-003.png",
+      "text": "What do you see in this image?"
+    },
+    {
+      "id": "organic-004",
+      "image": "assets/blots-organic/organic-004.png",
+      "text": "What do you see in this image?"
+    },
+    {
+      "id": "organic-005",
+      "image": "assets/blots-organic/organic-005.png",
+      "text": "What do you see in this image?"
+    },
+    {
+      "id": "organic-006",
+      "image": "assets/blots-organic/organic-006.png",
+      "text": "What do you see in this image?"
+    },
+    {
+      "id": "organic-007",
+      "image": "assets/blots-organic/organic-007.png",
+      "text": "What do you see in this image?"
+    },
+    {
+      "id": "organic-008",
+      "image": "assets/blots-organic/organic-008.png",
+      "text": "What do you see in this image?"
+    },
+    {
+      "id": "organic-009",
+      "image": "assets/blots-organic/organic-009.png",
+      "text": "What do you see in this image?"
+    }
+  ]
+}
