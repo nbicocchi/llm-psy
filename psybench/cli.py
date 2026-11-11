@@ -9,15 +9,18 @@ from .catalog import export_catalog
 from .core import load_config
 from .export import export_results
 from .ollama import Ollama
+from .publication import install_publication, prepare_publication
 from .runner import execute, execution_lock
 from .store import Store
 
 
-def build_site(root):
+def build_site(root, public=False):
     if not shutil.which("bundle"):
         raise RuntimeError("Bundler not found. Install Ruby/Bundler and run `bundle install` in site/, or use --no-build")
     if not (root / "site/Gemfile.lock").is_file():
         raise RuntimeError("Missing site/Gemfile.lock. Run `bundle install` in site/ once, or use --no-build")
+    if public:
+        install_publication(root)
     # Historical exports remain config-independent; this separate catalog
     # describes currently configured tests, including those not yet run.
     if (root / "config/experiments.toml").is_file():
@@ -25,7 +28,10 @@ def build_site(root):
     # Frozen mode prevents Bundler from resolving/fetching a missing lock during
     # an otherwise offline build. Dependency preparation is always explicit.
     environment = dict(os.environ, BUNDLE_FROZEN="true")
-    result = subprocess.run(["bundle", "exec", "jekyll", "build"], cwd=root / "site", env=environment)
+    command = ["bundle", "exec", "jekyll", "build"]
+    if public:
+        command += ["--config", "_config.yml,_config.public.yml"]
+    result = subprocess.run(command, cwd=root / "site", env=environment)
     if result.returncode:
         raise RuntimeError("Jekyll build failed. Results are saved; after fixing dependencies, run `python3 -m psybench build`")
 
@@ -41,12 +47,14 @@ def main(argv=None):
     run.add_argument("--no-build", action="store_true", help="Export Jekyll data but skip the Ruby build")
     commands.add_parser("validate", help="Validate all configuration and local stimuli without connecting to Ollama")
     commands.add_parser("export", help="Regenerate CSV/JSON from SQLite, without Ollama or config")
-    commands.add_parser("build", help="Build Jekyll from previously exported data")
+    build = commands.add_parser("build", help="Build Jekyll from previously exported data")
+    build.add_argument("--public", action="store_true", help="Use the committed public snapshot, without SQLite or Ollama")
+    commands.add_parser("prepare-publication", help="Export the archive and create a redacted snapshot for explicit publication")
     args = parser.parse_args(argv)
     root = args.root.resolve()
     try:
         if args.command == "build":
-            build_site(root)
+            build_site(root, public=args.public)
             return 0
         if args.command == "validate":
             models, experiments, _ = load_config(root)
@@ -67,6 +75,8 @@ def main(argv=None):
                     client = Ollama(runtime.get("url", "http://127.0.0.1:11434"), runtime.get("timeout", 600))
                     failures = execute(root, store, client, models, experiments, runtime, args.offline)
                 export_results(root, store)
+                if args.command == "prepare-publication":
+                    prepare_publication(root)
                 if args.command == "run" and not args.no_build:
                     build_site(root)
                 if failures:

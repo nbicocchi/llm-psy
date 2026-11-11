@@ -1,0 +1,6 @@
+{
+  "policy": "public-snapshot-v1",
+  "raw_responses_available": false,
+  "run_count": 241,
+  "notice": "Scores, visual response text and original run IDs are preserved. Hardware details, local model paths, model show metadata, token contexts and complete raw API exports are not published. Public metadata are not the original identity payload. Research outputs may contain offensive content."
+}

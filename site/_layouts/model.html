@@ -85,7 +85,8 @@ layout: default
 {% if model.runs.size > 0 %}
 <section class="panel">
   <h2>Inspect the source data</h2>
-  <p>The following downloads include all models. Filter by <code>model</code> in the score CSV, by model ID in each manifest, or by the run IDs shown above in the response archive.</p>
-  <div class="downloads"><a href="{{ '/assets/downloads/scores.csv' | relative_url }}" download>Scores CSV ↓</a><a href="{{ '/assets/downloads/manifests.json' | relative_url }}" download>Manifests JSON ↓</a><a href="{{ '/assets/downloads/responses.jsonl' | relative_url }}" download>Responses JSONL ↓</a></div>
+  <p>The downloads include all models. Filter by <code>model</code> in the score CSV or by model and run ID in the metadata.</p>
+  {% if site.data.publication %}<p class="coverage">{{ site.data.publication.notice | escape }}</p>{% endif %}
+  <div class="downloads"><a href="{{ '/assets/downloads/scores.csv' | relative_url }}" download>Scores CSV ↓</a><a href="{{ '/assets/downloads/manifests.json' | relative_url }}" download>{% if site.data.publication %}Public run metadata{% else %}Manifests{% endif %} JSON ↓</a>{% unless site.data.publication %}<a href="{{ '/assets/downloads/responses.jsonl' | relative_url }}" download>Responses JSONL ↓</a>{% endunless %}</div>
 </section>
 {% endif %}

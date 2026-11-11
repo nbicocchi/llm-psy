@@ -1,0 +1,8 @@
+# Public builds must not accidentally ship local raw exports left in source.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - assets/downloads/responses.jsonl
+  - assets/stimuli

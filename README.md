@@ -40,7 +40,7 @@ bundle exec jekyll serve --host 127.0.0.1 --port 4000
 
 Open **http://localhost:4000**. Stop the preview with `Ctrl+C`. Restart it after adding or changing a Ruby page generator in `site/_plugins/`.
 
-A fresh checkout has no research results: catalogs and image previews are available, but measured scores and descriptions remain empty. Local archives and derived result exports are excluded from Git by default, not deleted.
+A fresh checkout includes a reviewed public snapshot in `publication/`, not the private SQLite archive. To build the measured website from that snapshot, use `python3 -m psybench build --public`. This installs derived site data and regenerates catalogs without SQLite or Ollama. For a local public-mode preview, run `bundle exec jekyll serve --config _config.yml,_config.public.yml --host 127.0.0.1 --port 4000` inside `site/` after the public build. Plain `build` uses whatever derived data are already present locally; it does not automatically load the snapshot.
 
 ## Run experiments
 
@@ -168,7 +168,7 @@ Each item is an independent request without conversation history. Option orders 
 
 All assets are local: no CDNs, tracking, remote fonts or browser API calls. JavaScript provides charts and filters; static tables and navigation remain available without it. Set `baseurl` in `site/_config.yml` for subdirectory hosting.
 
-The build uses frozen Bundler resolution and custom Jekyll generators. For GitHub Pages, build the static `site/_site/` output using a workflow that supports those plugins; the limited built-in safe-mode build will not generate model and stimulus detail pages. No deployment workflow is enabled by this repository.
+The build uses frozen Bundler resolution and custom Jekyll generators. `netlify.toml` configures Netlify to build the public snapshot with base directory `site` and publish directory `_site`. For GitHub Pages, build the static `site/_site/` output using a workflow that supports those plugins; the limited built-in safe-mode build will not generate model and stimulus detail pages. No GitHub Pages deployment workflow is enabled.
 
 ## Visual stimulus generation
 
@@ -187,15 +187,15 @@ The last command verifies the historical archive offline. If preparing missing R
 
 ## Before publishing on GitHub
 
-The default `.gitignore` excludes the SQLite archive, model locks, derived research exports, build products, dependency directories, local paper PDFs and `.env` files. It does **not** delete them, sanitize them, or grant permission to redistribute questionnaires.
+The default `.gitignore` excludes the SQLite archive, model locks, local research exports, build products, dependency directories, local paper PDFs and `.env` files. The explicitly published snapshot in `publication/` is tracked. Ignore rules do **not** delete local files or grant permission to redistribute questionnaires.
 
 1. Read [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and review instrument and image rights.
 2. Choose a license for your original code before advertising the project as open source. No blanket software license has been assigned here.
 3. Inspect staged files with `git status --short`, `git diff --cached --stat` and `git diff --cached`. Ignore rules do not remove files already tracked by Git.
-4. Treat dataset publication as a separate decision. Exports include raw responses, potentially offensive text, local paths and hardware/runtime metadata. Review a separate publication copy; do not edit the authoritative archive to sanitize it.
+4. Local exports include raw responses, potentially offensive text, local paths and hardware/runtime metadata. Create or update the public copy explicitly with `python3 -m psybench prepare-publication`, review `git diff -- publication/`, then commit it. This command exports the archive and produces `public-snapshot-v1` data without changing SQLite or model locks. It preserves scores, visual response text and original run IDs, but omits model show metadata, local paths, hardware descriptions and complete raw API responses. Redacted metadata cannot independently reconstruct the original identity hashes. This is a minimization policy, not an automatic guarantee that response text contains no sensitive information.
 5. Keep backups outside the publication tree. The ignored model lock is needed to reproduce your exact artifacts.
 
-A fresh checkout intentionally does not reproduce the researcher's measured results. The included GitHub Actions workflow runs offline validation and fake-backend tests only; it does not download models, perform inference or deploy the site.
+Public builds replace derived files under `site/` and use an additional Jekyll exclusion list so a local raw JSONL file cannot accidentally enter the public output. A subsequent normal `export` restores local metadata mode. The GitHub Actions workflow runs offline validation and fake-backend tests only; it does not download models or perform inference. Netlify builds the already committed public snapshot.
 
 ## Layout
 
@@ -209,6 +209,7 @@ site/               Jekyll source and local assets
 tests/              Fake-backend and temporary-directory tests
 ideas/              Research proposals, not implemented experiments
 papers/             Reference bibliography; local PDFs are ignored
+publication/        Explicitly reviewed public scores and reduced metadata
 data/               Private authoritative archive (ignored)
 ```
 

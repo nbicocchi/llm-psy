@@ -58,4 +58,4 @@ Recalculating scores from saved data requires neither inference nor network acce
 
 ## Publication
 
-Downloads include all historical runs and all responses, including potentially offensive content, as well as hardware metadata. Review them before publication. The site uses no CDNs, analytics, remote fonts or APIs during browsing.
+Local exports include all saved attempts, including potentially offensive content and hardware metadata. Public builds instead use a versioned snapshot with original scores, visual response text and run IDs, while withholding local model paths, hardware descriptions and complete raw API exports. Environment identifiers preserve group separation, not hardware disclosure. Public metadata cannot independently reconstruct the original run identity hashes; full manifests remain in the researcher's private archive. The site uses no CDNs, analytics, remote fonts or APIs during browsing.

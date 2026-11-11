@@ -34,6 +34,7 @@ class RepositoryTests(unittest.TestCase):
             "site/assets/downloads/responses.jsonl", "site/assets/downloads/manifests.json",
             "site/assets/stimuli/example.jpg", "site/_data/results.json", "site/_data/comparison.json",
             "site/_data/model_profiles.json", "site/_data/catalog.json", "site/_data/stimuli.json",
+            "site/_data/publication.json",
             "site/_site/index.html", "site/.jekyll-metadata", "site/vendor/bundle/file.rb",
             "site/.bundle/config", "papers/reference.pdf", ".env", ".env.local", "psybench/__pycache__/core.pyc",
         ]
@@ -43,6 +44,7 @@ class RepositoryTests(unittest.TestCase):
             "assets/rorschach/manifest.json", "site/assets/rorschach/plate-01.jpg",
             "site/_data/rorschach.json",
             ".github/workflows/checks.yml",
+            "publication/results.json", "publication/manifests.json", "netlify.toml",
         ]
         with tempfile.TemporaryDirectory() as directory:
             subprocess.run(["git", "init", "--quiet", directory], check=True, capture_output=True)

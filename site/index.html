@@ -14,9 +14,10 @@ title: Comparisons
   <p>Runtime and hardware groups stay separate. Different questionnaire or generation protocols have separate columns; model artifacts and thinking modes have separate rows. Comparing different modes is descriptive, not a controlled estimate of a family or size effect.</p>
   <div class="downloads">
     <a href="{{ '/assets/downloads/scores.csv' | relative_url }}" download>Scores CSV ↓</a>
-    <a href="{{ '/assets/downloads/responses.jsonl' | relative_url }}" download>Responses JSONL ↓</a>
-    <a href="{{ '/assets/downloads/manifests.json' | relative_url }}" download>Manifests JSON ↓</a>
+    {% unless site.data.publication %}<a href="{{ '/assets/downloads/responses.jsonl' | relative_url }}" download>Responses JSONL ↓</a>{% endunless %}
+    <a href="{{ '/assets/downloads/manifests.json' | relative_url }}" download>{% if site.data.publication %}Public run metadata{% else %}Manifests{% endif %} JSON ↓</a>
   </div>
+  {% if site.data.publication %}<p class="coverage">{{ site.data.publication.notice | escape }} <a href="{{ '/assets/downloads/publication.json' | relative_url }}">Publication policy</a></p>{% endif %}
 </section>
 <div id="comparison-app" data-baseurl="{{ site.baseurl | escape }}" hidden>
   <section class="panel">

@@ -31,4 +31,4 @@ Ollama model weights are downloaded separately and are not covered by a reposito
 
 Ruby gems and developer tools retain their respective licenses. Dependency installation directories are ignored; the Gemfile and lockfile remain source-controlled inputs.
 
-Generated research exports are not a sanitized public dataset. They may contain copyrighted prompt text, raw model outputs, local paths, hardware metadata or offensive content. Publishing them requires a separate review and an explicit dataset licensing decision; do not assume a future code license covers them.
+Local research exports are not a sanitized public dataset. The separately committed `publication/` snapshot preserves scores and visual response text while minimizing runtime metadata; it may still contain copyrighted prompt text or offensive model output. Publication requires rights and content review and an explicit dataset licensing decision; do not assume a future code license covers it. Reduced public manifests preserve original run IDs but are not the full identity payloads.

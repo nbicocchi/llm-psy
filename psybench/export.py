@@ -12,6 +12,10 @@ from .runner import write_json
 
 
 def export_results(root, store):
+    # A normal archive export restores the local, non-public data mode.
+    for publication_marker in (root / "site/_data/publication.json", root / "site/assets/downloads/publication.json"):
+        if publication_marker.exists():
+            publication_marker.unlink()
     runs = store.runs()
     targets = store.targets()
     attempts = store.attempts()

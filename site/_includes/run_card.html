@@ -21,5 +21,5 @@
       </tbody>
     </table>
   </div>
-  <details><summary>Experiment identity</summary><dl><dt>Run SHA-256</dt><dd><code>{{ run.run_id }}</code></dd><dt>Model digest</dt><dd><code>{{ run.digest | escape }}</code></dd><dt>Ollama</dt><dd>{{ run.backend_version | escape }}</dd></dl><p>The downloadable manifest includes configuration, model metadata, hardware and stimulus hashes.</p></details>
+  <details><summary>Experiment identity</summary><dl><dt>Run SHA-256</dt><dd><code>{{ run.run_id }}</code></dd><dt>Model digest</dt><dd><code>{{ run.digest | escape }}</code></dd><dt>Ollama</dt><dd>{{ run.backend_version | escape }}</dd></dl><p>{% if site.data.publication %}Public metadata preserve configuration and stimulus hashes, but omit local model paths and hardware details. The original run hash cannot be independently reconstructed from redacted metadata.{% else %}The downloadable manifest includes configuration, model metadata, hardware and stimulus hashes.{% endif %}</p></details>
 </article>
